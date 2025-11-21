@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Data Analysis Web App — Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent2: #d97706;
+    }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto;
+      margin: 0;
+      background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+    .container { max-width: 1000px; margin: 32px auto; padding: 28px; }
+    header { display: flex; align-items: center; gap: 16px; }
+    .logo {
+      width: 72px; height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: white; font-size: 22px;
+    }
+    h1 { margin:0; font-size:26px; }
+    p.lead { color: var(--muted); margin-top: 6px; }
+    .card { background: rgba(0,0,0,0.02); padding: 18px; border-radius: 12px; margin-top: 18px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+    img.screenshot { width: 100%; height: 360px; object-fit: contain; background: #f1f5f9; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); }
+    .meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .badge { background: rgba(0,0,0,0.04); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px; }
+    a.btn-home { display:inline-block; padding:10px 16px; background:#0f766e; color:white; border-radius:8px; text-decoration:none; margin-bottom:20px; font-weight:600; }
+    a.btn { display: inline-block; padding: 10px 14px; border-radius: 10px; background: linear-gradient(90deg,var(--accent),#0e9c94); color: #ffffff; font-weight: 700; text-decoration: none; margin-right: 6px; margin-top: 4px; }
+    section h2 { margin:0 0 8px 0; }
+    p.note { background: rgba(0,0,0,0.02); padding: 10px; border-left: 4px solid rgba(15,118,110,0.2); border-radius: 6px; color: var(--muted); }
+    ul.plain { margin: 8px 0 0 18px; color: var(--muted); }
+    .small { font-size: 0.95rem; color: var(--muted); margin-top: 8px; }
+    .data-links { background: rgba(15,118,110,0.05); padding: 12px; border-radius: 8px; margin-top: 10px; }
+    .data-links h3 { margin: 0 0 8px 0; font-size: 15px; color: var(--accent); }
+    .data-links ul { margin: 0; padding-left: 20px; list-style: disc; }
+    .data-links li { margin: 4px 0; font-size: 13px; }
+    .data-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .data-links a:hover { text-decoration: underline; }
+    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align:center; }
+    @media(max-width:900px) { .grid { grid-template-columns: 1fr; } .container { padding: 16px; } }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html#projects" class="btn-home">⬅Projects</a>
+
+<div class="container">
+
+  <header>
+    <div class="logo">DA</div>
+    <div>
+      <h1>Data Analysis Web App</h1>
+      <p class="lead">Upload your CSV/XLSX file, analyze your data, and get ML-based predictions. Includes user accounts and PDF report generation.</p>
+
+      <div class="meta">
+        <span class="badge">Author: Paul (SUT ZAW AUNG)</span>
+        <span class="badge">Project: Data Analysis Web App</span>
+        <span class="badge">Date: Nov 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+
+    <!-- Overview -->
+    <section>
+      <h2>Project Overview</h2>
+      <p class="note">
+        This web app allows users to upload datasets in CSV or Excel format, perform detailed data analysis, visualize trends, and predict outcomes using machine learning models. Users can also register accounts, log in, and download analysis results as a PDF report. The system combines data cleaning, visualization, and ML prediction in an interactive, user-friendly interface.
+      </p>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="full">
+      <h2>App Screenshots</h2>
+      <div class="grid">
+        <div>
+          <h3>Sign In / Registration</h3>
+          <img src="./images2/signin.png" class="screenshot" alt="User sign in and registration page screenshot">
+        </div>
+        <div>
+          <h3>Home Dashboard</h3>
+          <img src="./images2/home.png" class="screenshot" alt="Home dashboard screenshot with navigation and summary">
+        </div>
+        <div>
+          <h3>Data Dashboard</h3>
+          <img src="./images2/datadashboard.png" class="screenshot" alt="Data dashboard showing uploaded dataset summary">
+        </div>
+        <div>
+          <h3>Data Analysis</h3>
+          <img src="./images2/analysis.png" class="screenshot" alt="Data analysis visualizations screenshot">
+        </div>
+        <div>
+          <h3>ML Prediction</h3>
+          <img src="./images2/mlmodel.png" class="screenshot" alt="Machine learning prediction page screenshot">
+        </div>
+        <div>
+          <h3>Upload Data File</h3>
+          <img src="./images2/uploaddatafile.png" class="screenshot" alt="File upload page screenshot">
+        </div>
+        <div class="full">
+          <h3>Result as PDF Report</h3>
+          <img src="./images2/result_as_pdf_report.png" class="screenshot" alt="Generated PDF report screenshot">
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section>
+      <h2>Key Features</h2>
+      <ul class="plain">
+        <li>Upload CSV or Excel files and preview dataset</li>
+        <li>Data cleaning and preprocessing utilities</li>
+        <li>Interactive data visualizations: charts, distributions, trends</li>
+        <li>Machine learning predictions using models like Random Forest, Logistic Regression, or XGBoost</li>
+        <li>Account registration and authentication for secure access</li>
+        <li>Export analysis results and predictions as PDF reports</li>
+        <li>Reusable utility functions for data analysis, ML, and PDF generation</li>
+      </ul>
+    </section>
+
+    <!-- Source Code -->
+    <section class="full">
+      <h2>Source Code Links</h2>
+      <div class="data-links">
+        <h3>📂 Utilities & ML:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/utils/data_analysis.py" target="_blank">data_analysis.py</a> — Data analysis functions</li>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/utils/ml_models.py" target="_blank">ml_models.py</a> — Machine learning models and prediction utilities</li>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/utils/pdf_generator.py" target="_blank">pdf_generator.py</a> — PDF report generation functions</li>
+        </ul>
+        <h3>📂 Authentication & Account:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/auth/forms.py" target="_blank">auth/forms.py</a> — User registration/login forms</li>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/auth/models.py" target="_blank">auth/models.py</a> — User account models</li>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/auth/routes.py" target="_blank">auth/routes.py</a> — Authentication routes</li>
+        </ul>
+        <h3>📂 Data Upload & Analysis Routes:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/data/forms.py" target="_blank">data/forms.py</a></li>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/data/models.py" target="_blank">data/models.py</a></li>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/data/routes.py" target="_blank">data/routes.py</a></li>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/data/utils.py" target="_blank">data/utils.py</a></li>
+        </ul>
+        <h3>📂 Main App Routes:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/dataseewep/blob/main/app/main/routes.py" target="_blank">main/routes.py</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="full">
+      <h2>Portfolio Highlight</h2>
+      <p class="note">
+        This project demonstrates full-stack development skills with Flask, data analysis capabilities using Python, and integration of machine learning predictions with interactive visualizations. It is ideal for showcasing expertise in building user-friendly, data-driven web applications that combine analytics, ML, and report generation.
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Created by <strong>Paul (SUT ZAW AUNG)</strong>. A complete data analysis web app with ML prediction, user accounts, and PDF reporting.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

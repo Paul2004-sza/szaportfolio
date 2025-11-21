@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loan Default Prediction — Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent2: #d97706;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto;
+      margin: 0;
+      background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 22px;
+    }
+
+    h1 { margin:0; font-size:26px; }
+    p.lead { color: var(--muted); margin-top: 6px; }
+
+    .card {
+      background: rgba(0,0,0,0.02);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+
+    img.screenshot {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      background: #f1f5f9;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .badge { background: rgba(0,0,0,0.04); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px; }
+
+    a.btn-home { display:inline-block; padding:10px 16px; background:#0f766e; color:white; border-radius:8px; text-decoration:none; margin-bottom:20px; font-weight:600; }
+
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--accent),#0e9c94);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 6px;
+      margin-top: 4px;
+    }
+
+    section h2 { margin:0 0 8px 0; }
+
+    p.note {
+      background: rgba(0,0,0,0.02);
+      padding: 10px;
+      border-left: 4px solid rgba(15,118,110,0.2);
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    ul.plain { margin: 8px 0 0 18px; color: var(--muted); }
+
+    .small { font-size: 0.95rem; color: var(--muted); margin-top: 8px; }
+
+    .data-links {
+      background: rgba(15,118,110,0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .data-links h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .data-links ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    .data-links li {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+
+    .data-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .data-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align:center; }
+
+    @media(max-width:900px) {
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html#projects" class="btn-home">⬅ Projects</a>
+
+<div class="container">
+
+  <header>
+    <div class="logo">LD</div>
+    <div>
+      <h1>Loan Default Prediction</h1>
+      <p class="lead">Building predictive models to identify loan default risk using machine learning classification techniques.</p>
+
+      <div class="meta">
+        <span class="badge">Author: Paul (SUT ZAW AUNG)</span>
+        <span class="badge">Project: Loan Default Prediction</span>
+        <span class="badge">Date: Nov 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+
+    <section>
+      <h2>Project Overview</h2>
+      <p class="note">
+        This project focuses on predicting loan default risk using multiple machine learning algorithms including Logistic Regression, Random Forest, XGBoost, and Decision Trees. By analyzing customer demographics, credit scores, loan amounts, interest rates, and payment behavior, we build robust models to identify high-risk borrowers before default occurs. Model interpretability is enhanced through SHAP values, feature importance analysis, and coefficient visualization.
+      </p>
+    </section>
+
+    <!-- Section 1: SHAP Values -->
+    <section>
+      <h2>1. SHAP Summary Plot</h2>
+      <p class="note">
+        SHAP (SHapley Additive exPlanations) values reveal how each feature contributes to the model's predictions. The plot shows that <strong>credit score</strong> is the most influential factor—higher scores (red dots) push predictions toward lower default risk, while lower scores (blue dots) increase default risk. Other key drivers include <strong>interest rate</strong>, <strong>loan amount</strong>, <strong>income</strong>, and <strong>term months</strong>. The visualization demonstrates model transparency and helps explain individual predictions to stakeholders.
+      </p>
+      <img src="./images/SHAP_v.png" class="screenshot" />
+      <p class="small">
+        Insight: SHAP provides model-agnostic interpretability, critical for regulatory compliance and business trust.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/shap_scores.csv" target="_blank">shap_scores.csv</a> — SHAP values for each prediction</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/shap_long_summary.csv" target="_blank">shap_long_summary.csv</a> — Aggregated SHAP summary statistics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: XGBoost ROC -->
+    <section>
+      <h2>2. ROC Curve - XGBoost</h2>
+      <p class="note">
+        The ROC (Receiver Operating Characteristic) curve measures the XGBoost model's ability to distinguish between defaulters and non-defaulters. With an AUC (Area Under Curve) near 1.0, the model demonstrates excellent discriminative power. The curve hugs the top-left corner, indicating high sensitivity and specificity—meaning the model correctly identifies both defaulters and non-defaulters with minimal false positives or false negatives.
+      </p>
+      <img src="./images/clear_roc_xgboost.png" class="screenshot" />
+      <p class="small">
+        Insight: High AUC confirms XGBoost as the strongest performer, suitable for production deployment.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/test_predictions.csv" target="_blank">test_predictions.csv</a> — Model predictions on test set</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/test_dataset.csv" target="_blank">test_dataset.csv</a> — Test data for model evaluation</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: Logistic Regression Coefficients -->
+    <section>
+      <h2>3. Logistic Regression Coefficients (95% CI)</h2>
+      <p class="note">
+        The coefficient plot shows how each feature impacts the probability of loan default in the logistic regression model. Features with positive coefficients (right side) increase default risk, while negative coefficients (left side) decrease it. <strong>Risk level (High)</strong> has the strongest positive impact, followed by <strong>interest rate</strong> and <strong>term months</strong>. Conversely, higher <strong>credit scores</strong> and <strong>income</strong> significantly reduce default probability. The 95% confidence intervals help assess coefficient reliability.
+      </p>
+      <img src="./images/Logistic_regression_coef_95CI_risk.png" class="screenshot" />
+      <p class="small">
+        Insight: Simple, interpretable coefficients make logistic regression ideal for explaining predictions to non-technical stakeholders.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/model_dataset.csv" target="_blank">model_dataset.csv</a> — Full modeling dataset with all features</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/train_dataset.csv" target="_blank">train_dataset.csv</a> — Training data for model building</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: Odds Ratios -->
+    <section>
+      <h2>4. Odds Ratios with 95% CI</h2>
+      <p class="note">
+        Odds ratios translate logistic regression coefficients into more intuitive risk metrics. A value greater than 1 indicates increased default odds, while values below 1 indicate decreased odds. For example, customers in the <strong>high-risk category (risk_level Q)</strong> have dramatically higher default odds (>1e+10), while customers with <strong>lower risk levels (risk_level L)</strong> show significantly reduced odds. This visualization helps quantify relative risk across different customer segments.
+      </p>
+      <img src="./images/odds_ratio_95_CI.png" class="screenshot" />
+      <p class="small">
+        Insight: Odds ratios are critical for credit risk assessment and pricing strategies.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/cleaned_loan_data.csv" target="_blank">cleaned_loan_data.csv</a> — Preprocessed data after cleaning</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 5: XGBoost Feature Importance -->
+    <section>
+      <h2>5. Top Important Features - XGBoost</h2>
+      <p class="note">
+        XGBoost ranks features by their contribution to model performance. <strong>Credit score</strong> dominates with the highest importance (~1.0), followed by <strong>loan amount</strong>, <strong>age</strong>, <strong>income</strong>, and <strong>interest rate</strong>. These features are repeatedly used in decision splits across the boosted trees, making them the primary drivers of prediction accuracy. Lower-ranked features like <strong>term_months</strong> and <strong>risk_levelMedium</strong> still contribute but to a lesser extent.
+      </p>
+      <img src="./images/top_important_features_XGBoost.png" class="screenshot" />
+      <p class="small">
+        Insight: Focus data collection and feature engineering efforts on high-importance variables for maximum model improvement.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/model_dataset.csv" target="_blank">model_dataset.csv</a> — Feature-engineered dataset</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 6: Random Forest Variable Importance -->
+    <section>
+      <h2>6. Variable Importance - Random Forest (MeanDecreaseAccuracy)</h2>
+      <p class="note">
+        Random Forest measures feature importance using <strong>Mean Decrease in Accuracy</strong>—the drop in model accuracy when a feature is randomly permuted. <strong>Risk level</strong> is the most critical feature, followed by <strong>credit score</strong>, <strong>term months</strong>, and <strong>interest rate</strong>. Unlike XGBoost's gain-based importance, this metric directly reflects each feature's contribution to classification accuracy, making it highly interpretable for model evaluation.
+      </p>
+      <img src="./images/variable_importance_rf_MDAC.png" class="screenshot" />
+      <p class="small">
+        Insight: Random Forest importance complements XGBoost findings, validating consistent feature rankings across models.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/train_dataset.csv" target="_blank">train_dataset.csv</a> — Training data for Random Forest</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/test_dataset.csv" target="_blank">test_dataset.csv</a> — Test data for validation</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 7: RF Importance (Both Metrics) -->
+    <section>
+      <h2>7. Random Forest Importance - MeanDecreaseAccuracy & MeanDecreaseGini</h2>
+      <p class="note">
+        This dual-metric visualization compares two importance measures: <strong>MeanDecreaseAccuracy</strong> (left) shows prediction accuracy impact, while <strong>MeanDecreaseGini</strong> (right) measures node impurity reduction (information gain). Both metrics consistently rank <strong>score</strong>, <strong>term_months</strong>, <strong>interest_rate</strong>, and <strong>risk_level</strong> as top features. Agreement between both measures confirms robust feature importance rankings and model stability.
+      </p>
+      <img src="./images/MD_AC_and_MDGini_rf_model.png" class="screenshot" />
+      <p class="small">
+        Insight: Dual-metric analysis strengthens confidence in feature selection and model interpretability.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/model_dataset.csv" target="_blank">model_dataset.csv</a> — Complete modeling dataset</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 8: Decision Tree -->
+    <section>
+      <h2>8. Decision Tree - Loan Default Prediction</h2>
+      <p class="note">
+        The decision tree provides a visual flowchart of the classification logic. Starting from the root node, the tree splits data based on key features like <strong>term_months</strong>, <strong>score</strong>, and <strong>interest_rate</strong>. Each node shows the splitting rule, samples count, and class distribution. The color intensity indicates prediction confidence—darker green means higher confidence in non-default, while darker red indicates higher default probability. This transparent structure makes the model's decision-making process fully interpretable.
+      </p>
+      <img src="./images/Decision_tree_loan_default_prediction.png" class="screenshot" />
+      <p class="small">
+        Insight: Decision trees excel in interpretability, useful for regulatory compliance and manual review processes.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/train_dataset.csv" target="_blank">train_dataset.csv</a> — Training data for decision tree</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/cleaned_loan_data.csv" target="_blank">cleaned_loan_data.csv</a> — Cleaned source data</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="full">
+      <h2>Overall Summary & Model Performance</h2>
+      <p class="note">
+        The Loan Default Prediction project successfully identifies high-risk borrowers using multiple machine learning approaches:
+        <br><br>
+
+        <strong>Best Model:</strong> XGBoost achieved the highest AUC and accuracy, making it ideal for production deployment.
+        <br>
+        <strong>Key Predictors:</strong> Credit score, loan amount, interest rate, risk level, and term length are the strongest default indicators.
+        <br>
+        <strong>Model Interpretability:</strong> SHAP values, logistic regression coefficients, and decision trees provide transparent explanations for predictions.
+        <br>
+        <strong>Business Impact:</strong> Accurate default prediction reduces financial losses, optimizes credit approval processes, and enables risk-based pricing.
+        <br><br>
+
+        All models demonstrate strong predictive power with proper feature engineering, robust validation, and comprehensive interpretability analysis.
+      </p>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="full">
+      <h2>Recommendations</h2>
+      <p class="note">
+        To maximize the business value of loan default prediction:
+        <ul class="plain">
+          <li><strong>Deploy XGBoost for real-time scoring:</strong> Use the best-performing model to evaluate loan applications instantly.</li>
+          <li><strong>Implement risk-based pricing:</strong> Adjust interest rates dynamically based on predicted default probability.</li>
+          <li><strong>Create early warning systems:</strong> Monitor existing customers for signs of increasing default risk using SHAP scores.</li>
+          <li><strong>Enhance data collection:</strong> Focus on high-importance features like credit score, income verification, and payment history.</li>
+          <li><strong>Build automated decision rules:</strong> Use decision tree logic for transparent, auditable loan approval workflows.</li>
+          <li><strong>Regular model retraining:</strong> Update models quarterly with new data to maintain prediction accuracy and adapt to changing economic conditions.</li>
+        </ul>
+      </p>
+    </section>
+
+    <!-- All Data Links -->
+    <section class="full">
+      <h2>Complete Dataset Collection</h2>
+      <div class="data-links">
+        <h3>📂 All Project Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/cleaned_loan_data.csv" target="_blank">cleaned_loan_data.csv</a> — Preprocessed and cleaned data</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/model_dataset.csv" target="_blank">model_dataset.csv</a> — Feature-engineered modeling dataset</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/train_dataset.csv" target="_blank">train_dataset.csv</a> — Training split for model development</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/test_dataset.csv" target="_blank">test_dataset.csv</a> — Test split for model evaluation</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/test_predictions.csv" target="_blank">test_predictions.csv</a> — Model predictions on test data</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/shap_scores.csv" target="_blank">shap_scores.csv</a> — SHAP values for model interpretability</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/LoanDefaultPrediction/shap_long_summary.csv" target="_blank">shap_long_summary.csv</a> — Aggregated SHAP summary statistics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Project Links -->
+    <section class="full">
+      <h2>Project Repository</h2>
+      <ul class="plain">
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/ML_data/LoanDefaultPrediction" target="_blank">View Loan Default Prediction Folder</a></li>
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science" target="_blank">View Full Bank Data Science Project</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by <strong>Paul (SUT ZAW AUNG)</strong>. Predictive analytics for intelligent credit risk management.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

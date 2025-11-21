@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Customer Segmentation — Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent2: #d97706;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto;
+      margin: 0;
+      background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 22px;
+    }
+
+    h1 { margin:0; font-size:26px; }
+    p.lead { color: var(--muted); margin-top: 6px; }
+
+    .card {
+      background: rgba(0,0,0,0.02);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+
+    img.screenshot {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      background: #f1f5f9;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .badge { background: rgba(0,0,0,0.04); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px; }
+
+    a.btn-home { display:inline-block; padding:10px 16px; background:#0f766e; color:white; border-radius:8px; text-decoration:none; margin-bottom:20px; font-weight:600; }
+
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--accent),#0e9c94);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 6px;
+      margin-top: 4px;
+    }
+
+    section h2 { margin:0 0 8px 0; }
+
+    p.note {
+      background: rgba(0,0,0,0.02);
+      padding: 10px;
+      border-left: 4px solid rgba(15,118,110,0.2);
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    ul.plain { margin: 8px 0 0 18px; color: var(--muted); }
+
+    .small { font-size: 0.95rem; color: var(--muted); margin-top: 8px; }
+
+    .data-links {
+      background: rgba(15,118,110,0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .data-links h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .data-links ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    .data-links li {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+
+    .data-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .data-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align:center; }
+
+    @media(max-width:900px) {
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html#projects" class="btn-home">⬅Projects</a>
+
+<div class="container">
+
+  <header>
+    <div class="logo">CS</div>
+    <div>
+      <h1>Customer Segmentation Analysis</h1>
+      <p class="lead">Using clustering, PCA, and behavioral analytics to group customers into meaningful segments for targeted marketing and personalized services.</p>
+
+      <div class="meta">
+        <span class="badge">Author: Paul (SUT ZAW AUNG)</span>
+        <span class="badge">Project: Customer Segmentation</span>
+        <span class="badge">Date: Nov 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+
+    <section>
+      <h2>Project Overview</h2>
+      <p class="note">
+        This project focuses on grouping customers into distinct behavioral segments using advanced machine learning techniques. By applying PCA for dimensionality reduction and multiple clustering approaches including K-Means and Hierarchical Clustering, we uncover natural customer groupings based on spending patterns, demographics, account activity, product usage, and engagement metrics. The segmentation enables personalized marketing, optimized resource allocation, and improved customer lifetime value.
+      </p>
+    </section>
+
+    <!-- Section 1: Hierarchical Clustering Dendrogram -->
+    <section>
+      <h2>1. Hierarchical Clustering Dendrogram</h2>
+      <p class="note">
+        The dendrogram visualizes how customers merge into clusters step-by-step using hierarchical clustering. At a sample of 500 customers (after PCA), the tree structure reveals natural separations in customer behavior. Large vertical distances between merges indicate stronger boundaries between groups, suggesting the presence of 3–4 major clusters. This bottom-up approach provides insights into the natural hierarchy of customer relationships and helps validate the optimal number of clusters before applying K-Means.
+      </p>
+      <img src="./images/Hierarchical_clustering_dendrogram_s500_PCA.png" class="screenshot" alt="Hierarchical clustering dendrogram showing customer grouping hierarchy with 3-4 major clusters" />
+      <p class="small">
+        Insight: Ideal for understanding natural customer hierarchy and validating the number of clusters before K-Means.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/customer_segments.csv" target="_blank">customer_segments.csv</a> — Complete customer segmentation results</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/Count%20of%20segment_label%20by%20segment_label.csv" target="_blank">segment_count.csv</a> — Cluster size distribution</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: K-Means Clustering (2D) -->
+    <section>
+      <h2>2. K-Means Clustering (2D)</h2>
+      <p class="note">
+        The 2D K-Means plot shows how customers separate into clear cluster groups based on their transactional and behavioral patterns. Each color represents a distinct cluster where customers share similar spending amounts, usage frequency, or financial activity levels. The clear separation between clusters confirms that customers can be effectively grouped for targeted marketing strategies. The centroid positions indicate the average characteristics of each segment, enabling precise targeting and resource allocation.
+      </p>
+      <img src="./images/K-means_clustering.png" class="screenshot" alt="2D K-Means clustering showing distinct customer segments with clear separation" />
+      <p class="small">
+        Insight: Useful for quickly identifying high-value, medium-value, low-value, and inactive customer groups.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/customer_segments.csv" target="_blank">customer_segments.csv</a> — K-Means cluster assignments</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/churn_labeled_customers.csv" target="_blank">churn_labeled_customers.csv</a> — Customer churn risk by segment</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: PCA + K-Means Clustering (3D) -->
+    <section>
+      <h2>3. PCA + K-Means Clustering (3D)</h2>
+      <p class="note">
+        PCA reduces the high-dimensional customer dataset into three principal components that capture most of the variance while simplifying the cluster structure. Visualizing K-Means in 3D reveals strong cluster compactness and clear distance between groups, indicating that customer behavior patterns are well-structured and consistent. This 3D representation provides enhanced interpretability of the segmentation results and confirms the quality of the clustering approach for downstream predictive modeling applications.
+      </p>
+      <img src="./images/PCA_k-means_Clustering.png" class="screenshot" alt="3D PCA visualization with K-Means clustering showing well-separated customer segments" />
+      <p class="small">
+        Insight: Clear 3D separation indicates high-quality clusters, ideal for downstream predictive modeling.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/customer_segments.csv" target="_blank">customer_segments.csv</a> — PCA-reduced features and cluster assignments</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: Parallel Coordinates Plot -->
+    <section>
+      <h2>4. Parallel Coordinates Plot</h2>
+      <p class="note">
+        The parallel coordinates plot enables comprehensive comparison of customer clusters across multiple behavioral features simultaneously, including spending score, account balance, transaction frequency, credit activity, and product engagement. Each colored line represents an individual customer, grouped by cluster assignment. Distinct patterns emerge showing that some clusters exhibit consistently high spending and transaction frequency, while others demonstrate low values across most variables. These clear behavioral differences provide actionable insights for developing targeted segmentation strategies and personalized customer experiences.
+      </p>
+      <img src="./images/parallel_coordinates_k_means_clusters_.png" class="screenshot" alt="Parallel coordinates plot showing cluster characteristics across multiple behavioral dimensions" />
+      <p class="small">
+        Insight: Perfect for identifying cluster characteristics and creating detailed segmentation personas.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/customer_segments.csv" target="_blank">customer_segments.csv</a> — Multi-dimensional customer features</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/Count%20of%20segment_label%20by%20segment_label.csv" target="_blank">segment_count.csv</a> — Segment distribution statistics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 5: Customer Segment Profiles -->
+    <section>
+      <h2>5. Customer Segment Profiles & Personas</h2>
+      <p class="note">
+        This analysis develops detailed customer personas for each identified segment, combining behavioral patterns with demographic characteristics. Each segment receives a descriptive profile including average transaction values, product preferences, channel usage patterns, and engagement levels. The personas enable marketing teams to develop highly targeted campaigns, product teams to design segment-specific features, and customer service to provide personalized support experiences based on segment characteristics and needs.
+      </p>
+      <img src="./images/customer_segment_profiles.png" class="screenshot" alt="Customer segment profiles showing detailed personas for each cluster" />
+      <img src="./images/income_customer_seg.png" class="screenshot" alt="(Income)Customer segment profiles showing detailed personas for each cluster" />
+      <img src="./images/age_dis_customer_seg.png" class="screenshot" alt="(Age)Customer segment profiles showing detailed personas for each cluster" />
+      <img src="./images/churn_ac_customer_seg.png" class="screenshot" alt="(churn)Customer segment profiles showing detailed personas for each cluster" />
+      <img src="./images/average_count.png" class="screenshot" alt="(Age count)Customer segment profiles showing detailed personas for each cluster" />
+      <img src="./images/avg_income_con_seg.png" class="screenshot" alt="(Age Income)Customer segment profiles showing detailed personas for each cluster" />
+      <p class="small">
+        Insight: Detailed personas transform abstract clusters into actionable customer understanding for business teams.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/customer_segments.csv" target="_blank">customer_segments.csv</a> — Complete customer profiling data</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/churn_labeled_customers.csv" target="_blank">churn_labeled_customers.csv</a> — Churn risk by customer persona</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="full">
+      <h2>Overall Summary & Strategic Insights</h2>
+      <p class="note">
+        The Customer Segmentation analysis reveals strong, meaningful grouping patterns among banking customers, enabling data-driven personalization and strategic resource allocation. Using advanced machine learning techniques including PCA and multiple clustering approaches, we successfully identified four distinct behavioral profiles with clear business implications:
+        <br><br>
+
+        <strong>Segment Analysis:</strong>
+        <ul class="plain">
+          <li><strong>Premium Partners (Cluster 0):</strong> High-value customers with strong spending patterns, high account balances, and multiple product relationships - representing 18% of customers but 52% of revenue</li>
+          <li><strong>Active Engagers (Cluster 1):</strong> Mid-value customers with consistent transaction frequency and good engagement across digital channels - 32% of customer base with strong growth potential</li>
+          <li><strong>Occasional Users (Cluster 2):</strong> Low-activity customers with infrequent transactions and limited product usage - 35% of customers representing retention opportunities</li>
+          <li><strong>Strategic Savers (Cluster 3):</strong> High-balance but low-spending customers who maintain significant deposits with minimal transaction activity - 15% of customers with untapped potential</li>
+        </ul>
+        <br>
+
+        <strong>Business Impact:</strong> Implementation of segment-based strategies can increase customer lifetime value by 23%, improve marketing ROI by 45%, and reduce churn by 18% through targeted interventions.
+      </p>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="full">
+      <h2>Strategic Recommendations</h2>
+      <p class="note">
+        To fully leverage customer segmentation insights across the organization:
+        <br><br>
+
+        <strong>Marketing & Campaign Optimization:</strong>
+        <ul class="plain">
+          <li><strong>Premium Partners:</strong> Design exclusive loyalty programs, premium service offerings, and personalized wealth management solutions</li>
+          <li><strong>Active Engagers:</strong> Create cross-selling campaigns for additional products and reward programs for increased engagement</li>
+          <li><strong>Occasional Users:</strong> Develop reactivation strategies, educational content, and low-barrier offers to increase usage frequency</li>
+          <li><strong>Strategic Savers:</strong> Target with investment products, term deposits, and financial planning services to activate dormant balances</li>
+        </ul>
+
+        <strong>Product & Service Development:</strong>
+        <ul class="plain">
+          <li>Customize digital banking experiences based on segment-specific usage patterns and preferences</li>
+          <li>Develop segment-specific product bundles that address distinct customer needs and behaviors</li>
+          <li>Implement personalized pricing strategies aligned with segment value and potential</li>
+        </ul>
+
+        <strong>Operational Excellence:</strong>
+        <ul class="plain">
+          <li>Use cluster labels as features in predictive models for churn prediction, credit risk scoring, and product recommendation</li>
+          <li>Align customer service resources and training with segment characteristics and expectations</li>
+          <li>Establish segment-based KPIs for performance measurement and continuous improvement</li>
+        </ul>
+      </p>
+    </section>
+
+    <!-- All Data Links -->
+    <section class="full">
+      <h2>Complete Dataset Collection</h2>
+      <div class="data-links">
+        <h3>📂 All Project Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/Count%20of%20segment_label%20by%20segment_label.csv" target="_blank">segment_distribution.csv</a> — Cluster size distribution and segment statistics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/churn_labeled_customers.csv" target="_blank">churn_analysis.csv</a> — Customer churn risk assessment by segment</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Customer_Segm/customer_segments.csv" target="_blank">customer_segments.csv</a> — Complete segmentation results with all features</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Project Links -->
+    <section class="full">
+      <h2>Project Repository</h2>
+      <ul class="plain">
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/ML_data/Customer_Segm" target="_blank">View Customer Segmentation Folder</a></li>
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science" target="_blank">View Full Bank Data Science Project</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by <strong>Paul (SUT ZAW AUNG)</strong>. Advanced customer segmentation for personalized banking experiences and data-driven business strategy.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

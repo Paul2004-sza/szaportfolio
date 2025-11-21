@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketing Campaign — Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent2: #d97706;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto;
+      margin: 0;
+      background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 22px;
+    }
+
+    h1 { margin:0; font-size:26px; }
+    p.lead { color: var(--muted); margin-top: 6px; }
+
+    .card {
+      background: rgba(0,0,0,0.02);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+
+    img.screenshot {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      background: #f1f5f9;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .badge { background: rgba(0,0,0,0.04); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px; }
+
+    a.btn-home { display:inline-block; padding:10px 16px; background:#0f766e; color:white; border-radius:8px; text-decoration:none; margin-bottom:20px; font-weight:600; }
+
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--accent),#0e9c94);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 6px;
+      margin-top: 4px;
+    }
+
+    section h2 { margin:0 0 8px 0; }
+
+    p.note {
+      background: rgba(0,0,0,0.02);
+      padding: 10px;
+      border-left: 4px solid rgba(15,118,110,0.2);
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    ul.plain { margin: 8px 0 0 18px; color: var(--muted); }
+
+    .small { font-size: 0.95rem; color: var(--muted); margin-top: 8px; }
+
+    .data-links {
+      background: rgba(15,118,110,0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .data-links h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .data-links ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    .data-links li {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+
+    .data-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .data-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align:center; }
+
+    @media(max-width:900px) {
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html#projects" class="btn-home">⬅Projects</a>
+
+<div class="container">
+
+  <header>
+    <div class="logo">MC</div>
+    <div>
+      <h1>Marketing Campaign Analysis</h1>
+      <p class="lead">Analysis of campaign performance, customer segmentation, and predictive modeling insights.</p>
+
+      <div class="meta">
+        <span class="badge">Author: Paul (SUT ZAW AUNG)</span>
+        <span class="badge">Project: Campaign Analytics</span>
+        <span class="badge">Date: Nov 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+
+    <section>
+      <h2>Project Overview</h2>
+      <p class="note">
+        This comprehensive marketing campaign analysis evaluates KBZ Bank's outreach effectiveness across multiple dimensions including customer demographics, geographic regions, channel performance, and predictive modeling outcomes. The project combines traditional campaign analytics with machine learning approaches to identify optimization opportunities and provide data-driven recommendations for future marketing strategies.
+      </p>
+    </section>
+
+    <!-- Section 1: Marketing Campaign Funnel -->
+    <section>
+      <h2>1. Marketing Campaign Funnel</h2>
+      <p class="note">
+        This funnel visualization shows how customers moved through the three key stages of KBZ Bank's marketing campaign:
+        <ul class="plain">
+          <li><strong>Reached (Top of Funnel):</strong> 1,000 customers — total who received the campaign message.</li>
+          <li><strong>Opened:</strong> 1,000 customers (100%) — all reached customers opened the message, showing strong targeting, effective delivery, and compelling content.</li>
+          <li><strong>Converted:</strong> 999 customers (99.9%) — nearly everyone who opened the message completed the desired action, indicating smooth journey and appealing offers.</li>
+        </ul>
+        <strong>Overall Insight:</strong> Minimal drop-off at every stage shows a highly successful campaign with near-perfect engagement and conversion.
+      </p>
+      <img src="./images/marketing_campaign_funnel.png" class="screenshot" alt="Marketing campaign funnel showing near-perfect conversion from reached to converted customers" />
+      <p class="small">
+        Insight: The exceptional funnel performance suggests excellent campaign design and execution, providing a strong foundation for optimization.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/overall_response_summary.csv" target="_blank">overall_response_summary.csv</a> — Overall campaign performance metrics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/revenue_stats.csv" target="_blank">revenue_stats.csv</a> — Revenue impact analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Response Rate Heatmap -->
+    <section>
+      <h2>2. Response Rate Heatmap by Channel and Age Group</h2>
+      <p class="note">
+        This heatmap shows customer response rates across channels (Email, App Notification, Phone, SMS) and age groups.
+        <ul class="plain">
+          <li>Lighter colors indicate higher response rates, darker colors indicate lower.</li>
+          <li>Younger customers respond better to App Notifications and SMS.</li>
+          <li>Older customers respond better via Email or Phone.</li>
+          <li>Dendrograms cluster channels and age groups with similar behavior.</li>
+        </ul>
+        <strong>Overall Insight:</strong> This helps identify which channels work best for each age segment, personalize messaging, and allocate budget effectively.
+      </p>
+      <img src="./images/Response_rate_heatmap_by_channel_age.png" class="screenshot" alt="Response rate heatmap showing channel effectiveness across different age groups" />
+      <p class="small">
+        Insight: Channel preferences vary significantly by age, enabling highly targeted campaign optimization.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/age_response_summary.csv" target="_blank">age_response_summary.csv</a> — Age group response analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/response_rate_AB_test_g.csv" target="_blank">response_rate_AB_test_g.csv</a> — A/B testing results by channel</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: ROC Curves -->
+    <section>
+      <h2>3. ROC Curves — Model Performance</h2>
+      <p class="note">
+        ROC curves compare Logistic Regression (blue), Naive Bayes (green), and XGBoost (red) in predicting customer response.
+        <ul class="plain">
+          <li>The curves show Sensitivity (True Positive Rate) vs 1 – Specificity (False Positive Rate).</li>
+          <li>All curves are near the diagonal, indicating models perform only slightly better than random guessing.</li>
+          <li>Values: Logistic Regression Sens 0.513 / Spec 0.502, Naive Bayes Sens 0.509 / Spec 0.508, XGBoost Sens 0.487 / Spec 0.502.</li>
+          <li>Limited predictive power may be due to imbalanced data, lack of strong features, or complex customer behavior.</li>
+        </ul>
+        <strong>Overall Insight:</strong> To improve predictions, consider adding customer behavior, past campaign interactions, or transaction patterns.
+      </p>
+      <img src="./images/ALL_Model_ROC_curves.png" class="screenshot" alt="ROC curves comparing performance of Logistic Regression, Naive Bayes, and XGBoost models" />
+      <p class="small">
+        Insight: Current models show limited predictive power, highlighting opportunities for feature engineering and data enrichment.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/model_comparison_results.csv" target="_blank">model_comparison_results.csv</a> — Detailed model performance metrics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/campaign_predictions.csv" target="_blank">campaign_predictions.csv</a> — Model predictions and probabilities</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: Overall Campaign Response -->
+    <section>
+      <h2>4. Overall Campaign Response</h2>
+      <p class="note">
+        This visualization presents the overall campaign performance, showing a nearly even split between respondents and non-respondents.
+        <ul class="plain">
+          <li><strong>Response Rate:</strong> 50.4% of customers responded to the campaign</li>
+          <li><strong>Non-Response Rate:</strong> 49.6% of customers did not respond to the campaign</li>
+          <li>The campaign achieved a slight majority of responses, with just 0.8 percentage points separating responders from non-responders</li>
+          <li>This near-even distribution indicates the campaign resonated with approximately half of the target audience</li>
+          <li>The minimal gap suggests opportunities to analyze the non-responding segment for potential optimization in future campaigns</li>
+        </ul>
+        <strong>Overall Insight:</strong> The campaign successfully engaged slightly more than half of the target audience (50.4%), representing a balanced performance that provides valuable insights for refining future marketing strategies to convert more of the non-responding segment.
+      </p>
+      <img src="./images/overallcampaignresponse.png" class="screenshot" alt="Overall campaign response showing near-even split between responders and non-responders" />
+      <p class="small">
+        Insight: The 50.4% response rate provides a solid baseline for measuring future campaign improvements.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/overall_response_summary.csv" target="_blank">overall_response_summary.csv</a> — Comprehensive response metrics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/roi_result.csv" target="_blank">roi_result.csv</a> — Return on investment analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 5: Response by Age Group -->
+    <section>
+      <h2>5. Response by Age Group</h2>
+      <p class="note">
+        This bar chart visualization shows response rates across different age demographics.
+        <ul class="plain">
+          <li>The 25-34 age group shows the highest response rate, indicating strongest campaign resonance.</li>
+          <li>Younger age groups (18-24) show moderate engagement levels.</li>
+          <li>Middle-aged segments (35-54) maintain consistent but slightly lower response rates.</li>
+          <li>Senior age groups (55+) demonstrate the lowest response rates, suggesting potential channel or messaging optimization opportunities.</li>
+        </ul>
+        <strong>Overall Insight:</strong> The campaign performed exceptionally well with the 25-34 demographic, while older age groups may require different engagement strategies or channel preferences.
+      </p>
+      <img src="./images/age_grop_response_rate_camp.png" class="screenshot" alt="Response rates by age group showing peak performance in 25-34 demographic" />
+      <p class="small">
+        Insight: Age-based segmentation reveals clear optimization opportunities for different demographic groups.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/age_response_summary.csv" target="_blank">age_response_summary.csv</a> — Detailed age group analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/income_conversion_rate.csv" target="_blank">income_conversion_rate.csv</a> — Income-based conversion patterns</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 6: Gender Response Rate -->
+    <section>
+      <h2>6. Gender Response Rate</h2>
+      <p class="note">
+        This visualization compares campaign response rates between gender groups.
+        <ul class="plain">
+          <li>Female customers show a slightly higher response rate compared to male customers.</li>
+          <li>The difference, while noticeable, is not substantial, indicating broad campaign appeal across genders.</li>
+          <li>Both gender groups show strong overall engagement with the campaign messaging.</li>
+          <li>The minimal gap suggests the campaign content and offers resonated well with both male and female audiences.</li>
+        </ul>
+        <strong>Overall Insight:</strong> The campaign demonstrated strong performance across gender demographics with a slight preference among female respondents, indicating well-balanced messaging that appeals to both genders effectively.
+      </p>
+      <img src="./images/gender_response_rate_camp.png" class="screenshot" alt="Gender response rates showing slightly higher engagement from female customers" />
+      <p class="small">
+        Insight: Gender-based analysis shows consistent campaign appeal with minor variations.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/gender_response_summary.csv" target="_blank">gender_response_summary.csv</a> — Gender-based response analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 7: Response Count & Rate by Region -->
+    <section>
+      <h2>7. Response Count & Rate by Region</h2>
+      <p class="note">
+        These visualizations provide geographic analysis of campaign performance across different regions in Myanmar.
+        <ul class="plain">
+          <li><strong>Response Count:</strong> The bar chart shows Yangon generated the highest absolute response count (1200), followed by Mandalay (1100) and Naypydaw (1000). Smaller regions like Bago, Mowlamyine, Myitkyina, Pathein, Siltwe, and Tauragyi showed significantly lower response volumes.</li>
+          <li><strong>Response Rate:</strong> Regional response rates show moderate variation, with most regions falling between 48-52%. Yangon shows the highest response rate at 52.14%, followed by Mandalay at 51.51%. The lowest response rates are observed in regions like Monywa and Pathein at approximately 48.37%.</li>
+          <li>Despite lower absolute response counts, some smaller regions maintain competitive response rates, indicating efficient targeting and engagement relative to their population size.</li>
+          <li>The data reveals a clear urban concentration in response volume, with Yangon and Mandalay dominating, while maintaining strong response rates across both major and smaller regions.</li>
+        </ul>
+        <strong>Overall Insight:</strong> Major urban centers (Yangon and Mandalay) drive the highest response volumes while maintaining strong response rates. Smaller regions show efficient engagement despite lower absolute numbers, suggesting opportunities for scaled campaigns in these areas with proper resource allocation.
+      </p>
+      <img src="./images/region_response_count_camp.png" class="screenshot" alt="Regional response counts showing urban concentration in Yangon and Mandalay" />
+      <img src="./images/region_response_rate_camp.png" class="screenshot" alt="Regional response rates showing consistent performance across most regions" />
+      <p class="small">
+        Insight: Geographic analysis reveals both volume concentration in urban areas and consistent performance across regions.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/region_response_summary.csv" target="_blank">region_response_summary.csv</a> — Regional performance summary</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/processed/Campaign_response/region_files" target="_blank">region_files/</a> — Detailed regional breakdowns</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/income_response_summary.csv" target="_blank">income_response_summary.csv</a> — Income-based regional analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 8: Campaign ROI and Financial Impact -->
+    <section>
+      <h2>8. Campaign ROI and Financial Impact</h2>
+      <p class="note">
+        This analysis evaluates the financial performance and return on investment of the marketing campaign, examining cost-per-acquisition, customer lifetime value impact, and overall campaign profitability. The visualization shows how different customer segments contributed to revenue generation and identifies the most cost-effective acquisition channels and demographic groups.
+        <ul class="plain">
+          <li><strong>Cost-Per-Acquisition (CPA):</strong> Analysis of acquisition costs across different channels and customer segments</li>
+          <li><strong>Customer Lifetime Value (CLV):</strong> Projected long-term value of acquired customers by segment</li>
+          <li><strong>Channel Efficiency:</strong> Comparison of marketing spend efficiency across different outreach channels</li>
+          <li><strong>Segmentation ROI:</strong> Return on investment analysis for different demographic and geographic segments</li>
+        </ul>
+        <strong>Overall Insight:</strong> The campaign demonstrated strong overall ROI with particular efficiency in digital channels and younger demographic segments, providing clear guidance for future budget allocation.
+      </p>
+      <img src="./images/campaign_roi_analysis.png" class="screenshot" alt="Campaign ROI analysis showing financial performance across segments and channels" />
+      <img src="./images/conversionratebyincomebracket.png" class="screenshot" alt="Conversion Rate by Income Bracket" />
+            <img src="./images/roivsrespondersbychannel.png" class="screenshot" alt="ROI vs Responders by channel" />
+      <p class="small">
+        Insight: Financial analysis reveals optimal budget allocation strategies for maximum return on marketing investment.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/roi_result.csv" target="_blank">roi_result.csv</a> — Comprehensive ROI analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/revenue_stats.csv" target="_blank">revenue_stats.csv</a> — Revenue impact by segment</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/income_conversion_rate.csv" target="_blank">income_conversion_rate.csv</a> — Income-based conversion efficiency</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="full">
+      <h2>Overall Summary & Strategic Insights</h2>
+      <p class="note">
+        This marketing campaign analysis provides a complete view of how customers across Myanmar engaged with KBZ Bank's outreach efforts—from funnel performance and demographic behavior to regional engagement patterns and predictive modeling outcomes.
+        <br><br>
+
+        The campaign delivered <strong>exceptional top-funnel and mid-funnel performance</strong>, with nearly all customers opening the message and an impressive 99.9% completing the desired action. However, demographic and geographic breakdowns reveal meaningful differences in behavior among age groups, genders, and regions. Younger segments and urban centers, particularly Yangon and Mandalay, demonstrated the strongest engagement, while older age groups and smaller regions showed more conservative response patterns.
+        <br><br>
+
+        Advanced analytics, including heatmaps and ROC curve modeling, indicate that <strong>customer response behavior is complex and not easily predicted using the existing dataset</strong>. Although current machine-learning models performed slightly above chance level, this highlights clear opportunities for improvement through richer customer behavior data, historical transaction trends, and personalized engagement features.
+        <br><br>
+
+        <strong>Key Performance Metrics:</strong>
+        <ul class="plain">
+          <li><strong>Overall Response Rate:</strong> 50.4% - Solid baseline for optimization</li>
+          <li><strong>Funnel Conversion:</strong> 99.9% - Exceptional campaign execution</li>
+          <li><strong>Top Performing Segment:</strong> 25-34 age group in urban centers</li>
+          <li><strong>Most Effective Channel:</strong> Age-dependent with clear patterns</li>
+          <li><strong>Geographic Concentration:</strong> Yangon and Mandalay drive majority volume</li>
+        </ul>
+      </p>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="full">
+      <h2>Strategic Recommendations</h2>
+      <p class="note">
+        Based on comprehensive campaign analysis, the following strategic recommendations will optimize future marketing performance:
+        <ul class="plain">
+          <li><strong>Channel Personalization:</strong> Implement age-specific channel strategies—App/SMS for younger segments, Email/Phone for older demographics</li>
+          <li><strong>Regional Resource Allocation:</strong> Maintain strong presence in Yangon/Mandalay while developing targeted approaches for underperforming regions</li>
+          <li><strong>Predictive Model Enhancement:</strong> Enrich feature set with transaction history, past campaign interactions, and behavioral data</li>
+          <li><strong>Segmentation Refinement:</strong> Develop micro-segments combining age, region, and channel preferences for hyper-targeted campaigns</li>
+          <li><strong>Budget Optimization:</strong> Reallocate spend toward highest ROI channels and demographic segments identified in analysis</li>
+          <li><strong>Testing Framework:</strong> Implement systematic A/B testing for messaging, offers, and channel combinations</li>
+        </ul>
+      </p>
+    </section>
+
+    <!-- All Data Links -->
+    <section class="full">
+      <h2>Complete Dataset Collection</h2>
+      <div class="data-links">
+        <h3>📂 All Project Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/age_response_summary.csv" target="_blank">age_response_summary.csv</a> — Age group response analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/gender_response_summary.csv" target="_blank">gender_response_summary.csv</a> — Gender-based response patterns</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/income_response_summary.csv" target="_blank">income_response_summary.csv</a> — Income segment analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/overall_response_summary.csv" target="_blank">overall_response_summary.csv</a> — Campaign performance overview</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Campaign_response/region_response_summary.csv" target="_blank">region_response_summary.csv</a> — Regional performance metrics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/processed/Campaign_response/region_files" target="_blank">region_files/</a> — Detailed regional breakdowns</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/campaign_predictions.csv" target="_blank">campaign_predictions.csv</a> — Model predictions and probabilities</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/income_conversion_rate.csv" target="_blank">income_conversion_rate.csv</a> — Income-based conversion analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/model_comparison_results.csv" target="_blank">model_comparison_results.csv</a> — Machine learning model performance</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/response_rate_AB_test_g.csv" target="_blank">response_rate_AB_test_g.csv</a> — A/B testing results</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/revenue_stats.csv" target="_blank">revenue_stats.csv</a> — Revenue impact analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/campaign/roi_result.csv" target="_blank">roi_result.csv</a> — Return on investment calculations</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Project Links -->
+    <section class="full">
+      <h2>Project Repository</h2>
+      <ul class="plain">
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/processed/Campaign_response" target="_blank">View Campaign Analysis Folder</a></li>
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/ML_data/campaign" target="_blank">View Machine Learning Models</a></li>
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science" target="_blank">View Full Bank Data Science Project</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by <strong>Paul (SUT ZAW AUNG)</strong>. Marketing analytics for data-driven campaign optimization and strategic decision-making.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

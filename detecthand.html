@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hand Detection — Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent2: #d97706;
+    }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, Arial;
+      margin: 0;
+      background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 22px;
+    }
+    h1 { margin:0; font-size:26px; }
+    p.lead { color: var(--muted); margin-top: 6px; }
+    .card {
+      background: rgba(0,0,0,0.02);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+    img.screenshot {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      background: #f1f5f9;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .badge {
+      background: rgba(0,0,0,0.04);
+      padding:6px 10px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    a.btn-home {
+      display:inline-block;
+      padding:10px 16px;
+      background:#0f766e;
+      color:white;
+      border-radius:8px;
+      text-decoration:none;
+      margin-bottom:20px;
+      font-weight:600;
+    }
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--accent),#0e9c94);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 6px;
+      margin-top: 4px;
+    }
+    section h2 { margin:0 0 8px 0; }
+    p.note {
+      background: rgba(0,0,0,0.02);
+      padding: 10px;
+      border-left: 4px solid rgba(15,118,110,0.2);
+      border-radius: 6px;
+      color: var(--muted);
+    }
+    ul.plain { margin: 8px 0 0 18px; color: var(--muted); }
+    .small { font-size: 0.95rem; color: var(--muted); margin-top: 8px; }
+    .code-box {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 12px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: pre;
+      font-family: "Courier New", Courier, monospace;
+    }
+    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align:center; }
+    @media(max-width:900px) {
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html#projects" class="btn-home">⬅ Projects</a>
+
+<div class="container">
+
+  <header>
+    <div class="logo">HD</div>
+    <div>
+      <h1>Hand Detection System</h1>
+      <p class="lead">
+        A real-time hand-inside-person detection demo using OpenCV, MediaPipe & MobileNetSSD in a Tkinter GUI.
+      </p>
+
+      <div class="meta">
+        <span class="badge">Author: Paul (SUT ZAW AUNG)</span>
+        <span class="badge">Project: Computer Vision</span>
+        <span class="badge">Date: Nov 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+
+    <section>
+      <h2>Project Overview</h2>
+      <p class="note">
+        This project uses:
+        <ul class="plain">
+          <li><strong>MediaPipe Hands</strong> to extract 21 hand landmarks per hand (x, y coordinates normalized 0–1).</li>
+          <li><strong>MobileNet-SSD (Caffe)</strong> to detect people (class ID 15).</li>
+        </ul>
+        The logic then checks if <strong>any hand landmark lies inside a detected person bounding box</strong>. On detection:
+        <ul class="plain">
+          <li>Draws a red bounding box around the person.</li>
+          <li>Displays “Hand Detected”.</li>
+          <li>Plays a beep sound.</li>
+          <li>Saves a screenshot automatically in the <code>screenshots/</code> folder.</li>
+          <li>Runs in a simple Tkinter GUI for live feedback.</li>
+        </ul>
+      </p>
+    </section>
+
+    <section class="grid">
+      <div>
+        <h2>Hand Detected</h2>
+        <img src="images2/detected.png" class="screenshot" alt="Detected hand inside person bounding box" />
+      </div>
+      <div>
+        <h2>No Hand Detected</h2>
+        <img src="images2/normal.png" class="screenshot" alt="No hand inside person bounding box" />
+      </div>
+    </section>
+
+    <section class="full">
+      <h2>Step-by-Step Code Explanation</h2>
+
+      <p class="note">1) Imports & Setup</p>
+      <div class="code-box">
+import cv2
+import mediapipe as mp
+import threading
+import tkinter as tk
+from tkinter import Label, Button
+from PIL import Image, ImageTk
+import time
+import os
+import winsound
+      </div>
+      <p class="small">
+        <strong>Explanation:</strong>
+        OpenCV handles video input & DNN person detection; MediaPipe extracts hand landmarks; threading keeps Tkinter responsive; PIL converts frames to Tkinter images; winsound plays alert sounds.
+      </p>
+
+      <p class="note">2) Screenshot folder & model initialization</p>
+      <div class="code-box">
+os.makedirs("screenshots", exist_ok=True)
+
+mp_hands = mp.solutions.hands
+mp_draw = mp.solutions.drawing_utils
+hands = mp_hands.Hands(min_detection_confidence=0.7,
+                       min_tracking_confidence=0.7)
+
+net = cv2.dnn.readNetFromCaffe(
+    "MobileNetSSD_deploy.prototxt",
+    "MobileNetSSD_deploy.caffemodel"
+)
+PERSON_CLASS_ID = 15
+      </div>
+      <p class="small">
+        <strong>Explanation:</strong>
+        - <strong>0.7 detection & tracking confidence</strong> ensures MediaPipe only detects reliable hand landmarks.
+        - MobileNetSSD class 15 is person.
+        - Screenshot folder is created automatically to save images.
+      </p>
+
+      <p class="note">3) Tkinter GUI & App class</p>
+      <div class="code-box">
+class App:
+    def __init__(self, window):
+        self.window = window
+        self.window.title("Hand Detection System")
+
+        self.label = Label(window)
+        self.label.pack()
+
+        self.btn_start = Button(window, text="Start Detection", command=self.start_detection)
+        self.btn_start.pack()
+
+        self.btn_stop = Button(window, text="Stop Detection", command=self.stop_detection)
+        self.btn_stop.pack()
+
+        self.cap = None
+        self.running = False
+        self.screenshot_count = 0
+        self.last_alert_time = 0
+        self.alert_interval = 2  # seconds
+      </div>
+      <p class="small">
+        <strong>Explanation:</strong> Tkinter buttons start/stop detection. <br>
+        Alert interval of 2s avoids multiple alerts for same hand presence.
+      </p>
+
+      <p class="note">4) Detection Loop & hand landmarks</p>
+      <div class="code-box">
+while self.running and self.cap.isOpened():
+    ret, frame = self.cap.read()
+    if not ret:
+        break
+
+    frame = cv2.flip(frame, 1)  # mirror image for natural webcam view
+    h, w = frame.shape[:2]
+
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    result = hands.process(rgb)
+    hand_points = []
+    if result.multi_hand_landmarks:
+        for hand_landmarks in result.multi_hand_landmarks:
+            mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            for lm in hand_landmarks.landmark:
+                x, y = int(lm.x * w), int(lm.y * h)
+                hand_points.append((x, y))
+      </div>
+      <p class="small">
+        <strong>Explanation:</strong>
+        - Frame is flipped for mirror effect.
+        - MediaPipe returns normalized 0–1 coordinates; multiply by width & height to get pixel positions.
+        - Draw landmarks for visual feedback.
+      </p>
+
+      <p class="note">5) Person detection & hand-inside check</p>
+      <div class="code-box">
+blob = cv2.dnn.blobFromImage(frame, 0.007843, (300, 300), 127.5)
+net.setInput(blob)
+detections = net.forward()
+
+for i in range(detections.shape[2]):
+    confidence = detections[0, 0, i, 2]
+    class_id = int(detections[0, 0, i, 1])
+    if confidence > 0.5 and class_id == PERSON_CLASS_ID:
+        box = detections[0, 0, i, 3:7] * [w, h, w, h]
+        x1, y1, x2, y2 = box.astype(int)
+
+        hand_inside = any(x1 <= x <= x2 and y1 <= y <= y2 for (x, y) in hand_points)
+        color = (0, 0, 255) if hand_inside else (0, 255, 0)
+        label = "Hand Detected" if hand_inside else "No Hand"
+
+        cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
+        cv2.putText(frame, label, (x1, y1 - 10),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
+
+        if hand_inside and time.time() - self.last_alert_time > self.alert_interval:
+            winsound.Beep(1000, 300)
+            path = f"screenshots/screenshot_{self.screenshot_count:03}.jpg"
+            cv2.imwrite(path, frame)
+            print(f"[Saved] {path}")
+            self.screenshot_count += 1
+            self.last_alert_time = time.time()
+      </div>
+      <p class="small">
+        <strong>Explanation:</strong>
+        - Blob scaling <code>0.007843</code> = 1/127.5 → normalize to [-1,1] for MobileNetSSD.
+        - Resize 300×300 matches model input size.
+        - Detection confidence > 0.5 balances false positives/negatives.
+        - Hand-inside check uses simple overlap.
+        - Alert triggers beep & screenshot (timestamped with 3-digit incremental).
+      </p>
+
+      <p class="note">6) Display in Tkinter GUI</p>
+      <div class="code-box">
+img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+img = Image.fromarray(img)
+imgtk = ImageTk.PhotoImage(image=img)
+self.label.imgtk = imgtk
+self.label.configure(image=imgtk)
+      </div>
+      <p class="small">Convert BGR→RGB and use PIL Image to show live feed in Tkinter.</p>
+
+      <p class="note">7) Exit clean-up</p>
+      <div class="code-box">
+if self.cap:
+    self.cap.release()
+      </div>
+      <p class="small">Release webcam when stopping detection or closing app.</p>
+
+    </section>
+
+    <section>
+      <h2>Source Code & Repository</h2>
+      <p class="note">
+        Full Python code is available on GitHub.
+        For heart-shape hand detection, you can check the extended version there.
+      </p>
+      <a class="btn" href="https://github.com/Paul2004-sza/dataanalysismx/blob/main/ML_Detect_Hand_heart.py" target="_blank">View Source Code on GitHub</a>
+    </section>
+
+    <section class="full">
+      <h2>Summary & Insights</h2>
+      <p class="note">
+        <strong>Key Features:</strong>
+        <ul class="plain">
+          <li>Real-time person detection using MobileNet-SSD</li>
+          <li>Accurate hand-landmark detection via MediaPipe</li>
+          <li>Overlap check triggers alert when hand is inside person bounding box</li>
+          <li>Screenshot auto-saving with incremental filenames</li>
+          <li>Threaded Tkinter GUI for smooth live feed</li>
+        </ul>
+        <strong>Limitations:</strong>
+        <ul class="plain">
+          <li>Overlap check does not guarantee hand belongs to the person.</li>
+          <li>Lighting, occlusion, and camera angle can reduce accuracy.</li>
+          <li>winsound is Windows-only; replace for cross-platform alerts.</li>
+        </ul>
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Created by <strong>Paul (SUT ZAW AUNG)</strong> — Computer Vision Project using OpenCV, MediaPipe, and Tkinter.
+    Source: <a href="https://github.com/Paul2004-sza/dataanalysismx" target="_blank">GitHub Repository</a>.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

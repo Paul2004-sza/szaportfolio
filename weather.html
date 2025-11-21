@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Forecast — Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent2: #d97706;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto;
+      margin: 0;
+      background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 22px;
+    }
+
+    h1 { margin:0; font-size:26px; }
+    p.lead { color: var(--muted); margin-top: 6px; }
+
+    .card {
+      background: rgba(0,0,0,0.02);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+
+    img.screenshot {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      background: #f1f5f9;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .badge { background: rgba(0,0,0,0.04); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px; }
+
+    a.btn-home { display:inline-block; padding:10px 16px; background:#0f766e; color:white; border-radius:8px; text-decoration:none; margin-bottom:20px; font-weight:600; }
+
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--accent),#0e9c94);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 6px;
+      margin-top: 4px;
+    }
+
+    section h2 { margin:0 0 8px 0; }
+
+    p.note {
+      background: rgba(0,0,0,0.02);
+      padding: 10px;
+      border-left: 4px solid rgba(15,118,110,0.2);
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    ul.plain { margin: 8px 0 0 18px; color: var(--muted); }
+
+    .small { font-size: 0.95rem; color: var(--muted); margin-top: 8px; }
+
+    .data-links {
+      background: rgba(15,118,110,0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .data-links h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .data-links ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    .data-links li {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+
+    .data-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .data-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align:center; }
+
+    @media(max-width:900px) {
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html#projects" class="btn-home">⬅Projects</a>
+
+<div class="container">
+
+  <header>
+    <div class="logo">WF</div>
+    <div>
+      <h1>Weather Forecast App</h1>
+      <p class="lead">Check real-time weather, 5-day forecasts, temperature trends, and more. Web and mobile-ready application.</p>
+
+      <div class="meta">
+        <span class="badge">Author: Paul (SUT ZAW AUNG)</span>
+        <span class="badge">Project: Weather Forecast App</span>
+        <span class="badge">Date: Nov 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+
+    <section>
+      <h2>Project Overview</h2>
+      <p class="note">
+        This project provides current weather data and 5-day forecasts for any city. Users can see temperature trends, weather conditions, and visual insights. It is built using Flask, OpenWeatherMap API, Plotly for interactive charts, and supports both web and mobile platforms.
+      </p>
+    </section>
+
+    <!-- Section 1: Enter City -->
+    <section>
+      <h2>1. Enter City & Get Weather</h2>
+      <p class="note">
+        Users enter a city name, and the app fetches current weather information, including temperature, condition, and an icon representing the weather.
+      </p>
+      <img src="./images2/weathernow_enter_city.png" class="screenshot" alt="Enter city to get current weather" />
+      <p class="small">
+        Insight: Real-time weather API integration with city input validation ensures reliable data delivery.
+      </p>
+    </section>
+
+    <!-- Section 2: Current Weather -->
+    <section>
+      <h2>2. Current Weather Display</h2>
+      <p class="note">
+        The application shows temperature in Celsius, weather description, and a representative image. Background images adapt to the weather condition for a visually engaging experience.
+      </p>
+      <img src="./images2/result.png" class="screenshot" alt="Current weather results with temperature and description" />
+      <p class="small">
+        Insight: Background imagery dynamically changes based on weather conditions to enhance user experience.
+      </p>
+    </section>
+
+    <!-- Section 3: 5-Day Forecast -->
+    <section>
+      <h2>3. 5-Day Forecast & Temperature Trends</h2>
+      <p class="note">
+        Users can view the forecast for the next 5 days with temperatures at noon, weather descriptions, and icons. Interactive Plotly charts show temperature trends over the 5-day period.
+      </p>
+      <img src="./images2/forecast_plot.png" class="screenshot" alt="Interactive 5-day weather forecast chart" />
+            <img src="./images2/forecast_plot2.png" class="screenshot" alt="Interactive 5-day temperature forecast chart" />
+      <p class="small">
+        Insight: Plotly integration allows interactive visualization of temperature trends to track upcoming weather changes effectively.
+      </p>
+    </section>
+
+    <!-- Section 4: APK & Mobile -->
+    <section>
+      <h2>4. Mobile App APK</h2>
+      <p class="note">
+        The app is also available as a mobile APK file for Android users, allowing on-the-go weather checks.
+      </p>
+      <a class="btn" href="https://github.com/Paul2004-sza/weatherapi/blob/main/sut_zaw_aung_appweather.apk" target="_blank">Download APK</a>
+      <p class="small">
+        Insight: The same backend powers both the web and mobile applications, ensuring consistency across platforms.
+      </p>
+    </section>
+
+    <!-- Section 5: Source Code -->
+    <section>
+      <h2>5. Source Code & Repository</h2>
+      <p class="note">
+        Explore the full Flask backend, data handling, and Plotly chart generation. Key modules include `wp.py` for weather logic and API integration.
+      </p>
+      <a class="btn" href="https://github.com/Paul2004-sza/weatherapi/blob/main/wp.py" target="_blank">View Python Code (wp.py)</a>
+      <a class="btn" href="https://github.com/Paul2004-sza/weatherapi" target="_blank">View Full Repository</a>
+    </section>
+
+    <!-- Summary -->
+    <section class="full">
+      <h2>Summary & Insights</h2>
+      <p class="note">
+        <strong>Key Features:</strong>
+        <ul class="plain">
+          <li>Real-time current weather updates with dynamic images</li>
+          <li>5-day weather forecasting with interactive Plotly visualization</li>
+          <li>Temperature trends and daily noon-time temperature highlights</li>
+          <li>Web and Android mobile support with APK download</li>
+          <li>Flask backend with clean modular Python code for API requests and plotting</li>
+        </ul>
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by <strong>Paul (SUT ZAW AUNG)</strong>. Weather forecast application for interactive visualization and mobile-friendly access.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SUTZAWAUNG's Portfolio</title>
+<style>
+  :root{
+    --primary-color:#0f766e;
+    --secondary-color:#e0f2f1;
+    --text-color:#333;
+    --light-text:#fff;
+    --shadow:0 4px 6px rgba(0,0,0,0.1);
+    --hero-text-color:#FFD700;
+    --hero-text-secondary:#696969;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:var(--text-color);line-height:1.6;overflow-x:hidden;}
+  nav{position:fixed;top:0;width:100%;background:var(--primary-color);color:var(--light-text);display:flex;justify-content:center;padding:15px 0;z-index:1000;flex-wrap:wrap;box-shadow:var(--shadow)}
+  nav a{color:var(--light-text);margin:5px 12px;text-decoration:none;font-weight:600;padding:5px 10px;border-radius:4px}
+  nav a:hover{background:rgba(255,255,255,0.12)}
+  section{min-height:100vh;padding:100px 20px 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+  .container{max-width:1200px;width:100%;padding:0 20px}
+  /* Slider simplified */
+  #home{position:relative;width:100%;height:100vh;overflow:hidden;padding:0;margin:0}
+  .slides{display:flex;transition:transform .7s ease-in-out;height:100%;width:100%}
+  .slides img{width:100vw;height:100vh;object-fit:cover;flex-shrink:0;display:block}
+  .arrow{position:absolute;top:50%;transform:translateY(-50%);font-size:3rem;color:var(--light-text);background:rgba(0,0,0,0.4);border:none;padding:10px;cursor:pointer;z-index:10;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center}
+  .prev{left:20px}.next{right:20px}.arrow:hover{background:rgba(0,0,0,0.7)}
+  .slide-indicators{position:absolute;bottom:30px;left:0;right:0;display:flex;justify-content:center;gap:10px;z-index:10}
+  .indicator{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer}
+  .indicator.active{background:var(--light-text);transform:scale(1.2)}
+  .hero-text-container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;width:90%;max-width:800px}
+  .hero-text{position:absolute;top:0;left:0;width:100%;opacity:0;transition:opacity .7s ease-in-out,transform .7s ease-in-out;transform:translateY(20px)}
+  .hero-text.active{opacity:1;transform:translateY(0)}
+  .hero-text h1{font-size:3rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,.5);color:var(--hero-text-color);font-weight:700}
+  .hero-text p{font-size:1.5rem;color:var(--hero-text-secondary)}
+  /* Projects */
+  #projects{background:#f1f5f9;padding:80px 20px}
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:24px;width:100%}
+  .project-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s ease}
+  .project-card:hover{transform:translateY(-8px)}
+  .project-img{height:200px;overflow:hidden}
+  .project-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .project-card:hover .project-img img{transform:scale(1.05)}
+  .project-info{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+  .project-info h3{margin-bottom:8px;font-size:1.15rem;color:#0b6b62}
+  .project-info p{font-size:.95rem;color:#475569}
+  .project-links{display:flex;gap:12px;margin-top:14px}
+  .project-link{display:inline-block;padding:8px 14px;background:var(--primary-color);color:var(--light-text);text-decoration:none;border-radius:6px;font-weight:600}
+  .project-link.secondary{background:#ffffff;color:var(--primary-color);border:1px solid #cfeee9}
+  footer{background:#333;color:var(--light-text);text-align:center;padding:20px;margin-top:40px}
+  /* Responsive */
+  @media(max-width:768px){.hero-text h1{font-size:2.2rem}.hero-text p{font-size:1rem}.project-img{height:160px}}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+  <a href="https://github.com/Paul2004-sza" target="_blank">GitHub</a>
+  <a href="https://linkedin.com/in/sut-zaw-aung-686107354" target="_blank">LinkedIn</a>
+  <a href="https://medium.com/@sutzawaungnhkum" target="_blank">Medium</a>
+  <a href="resume.html" target="_blank">Resume</a>
+</nav>
+
+<!-- Home Slider -->
+<section id="home">
+  <div class="slides">
+    <img src="images2/photo1.jpg" alt="Slide 1">
+    <img src="images2/photo2.jpg" alt="Slide 2">
+    <img src="images2/photo3.png" alt="Slide 3">
+  </div>
+
+  <div class="hero-text-container">
+    <div class="hero-text active" id="slide1-text"><h1>Hi, I am Sut Zaw Aung</h1></div>
+    <div class="hero-text" id="slide2-text"><h1>Welcome to my data analysis portfolio</h1></div>
+    <div class="hero-text" id="slide3-text"><h1>Explore my projects & insights</h1><p id="thankyou">Thank you</p></div>
+  </div>
+
+  <button class="arrow prev">&#10094;</button>
+  <button class="arrow next">&#10095;</button>
+
+  <div class="slide-indicators">
+    <div class="indicator active" data-index="0"></div>
+    <div class="indicator" data-index="1"></div>
+    <div class="indicator" data-index="2"></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" style="background:#f9fafb;padding:80px 20px;">
+  <div class="container" style="max-width:900px;margin:0 auto;">
+    <h2 style="text-align:center;margin-bottom:40px;color:#0f766e;font-size:2.5rem;">About Me</h2>
+
+    <div style="font-size:1rem;color:#333;line-height:1.8;position:relative;">
+
+      <!-- Creative floating image with text wrapping -->
+      <img src="images2/aboutme.png" alt="Profile"
+           style="width:180px;height:180px;border-radius:50%;object-fit:cover;float:left;margin-right:24px;margin-bottom:12px;box-shadow:var(--shadow);">
+
+      <p>
+        Hello! I am <strong>Sut Zaw Aung</strong>, a Digital Technology Innovation student at <a href="https://kbu.ac.th/" target="_blank" style="color:var(--primary-color); text-decoration:underline;">Kasem Bundit University</a> (2024–present). I am deeply passionate about how <strong>data tells stories</strong>, uncovering patterns, driving decisions, and revealing insights that matter. My daily routine involves exploring datasets, experimenting with <strong>Python</strong> and <strong>R</strong>, and translating complex information into <em>clear, actionable insights</em>.
+      </p>
+
+      <p>
+        Outside of my studies, I love working on <strong>personal data projects</strong> and creating interactive dashboards that are both <em>visually engaging</em> and informative. I enjoy blending creativity with analytics, transforming raw data into a story that <strong>inspires decisions</strong> and sparks curiosity.
+      </p>
+
+      <p>
+        I firmly believe that <strong>curiosity and persistence</strong> are the keys to growth. I continuously explore areas like <strong>AI</strong>, <strong>machine learning</strong>, and <strong>data visualization</strong> to challenge myself and expand my skill set. Through my work, I aim to generate insights that <em>make a positive impact</em> in real‑world applications.
+      </p>
+
+      <p style="text-align:center;margin-top:20px;font-style:italic;color:#696969;font-size:1.1rem;">
+        "Data is not just numbers — it’s a story waiting to be told."
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="container">
+    <h2>My Projects</h2>
+    <p style="color:#475569;margin-top:6px">Click image or Explore to open each project page.</p>
+
+  <div class="projects-grid">
+
+    <!-- 1: Loan Default Prediction -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="loandefaultprediction.html">
+          <img src="images2/loandefaultprediction.png" alt="Loan Default Prediction">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Loan Default Prediction</h3>
+          <p>Binary classification model with ROC, confusion matrix, SHAP interpretation.</p>
+        </div>
+        <div class="project-links">
+          <a href="loandefaultprediction.html" class="project-link">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2: Data Web (DataWep) -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="datawep.html">
+          <img src="images2/predictiveanalysticsdataapp.png" alt="Data Web">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Data Web (datawep)</h3>
+          <p>Data analytics interactive web application.</p>
+        </div>
+        <div class="project-links">
+          <a href="datawep.html" class="project-link">Explore</a>
+          <a href="https://github.com/Paul2004-sza/dataseewep" target="_blank" class="project-link secondary">Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3: Marketing Campaign Report -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="Marketing_Campaign_Report.html">
+          <img src="images2/marketingcampaign.png" alt="Marketing Campaign Report">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Marketing Campaign Report</h3>
+          <p>KBZ-like marketing campaign analysis using customer data.</p>
+        </div>
+        <div class="project-links">
+          <a href="Marketing_Campaign_Report.html" class="project-link">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4: Weather -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="weather.html">
+          <img src="images2/weatherforecastapp.png" alt="Weather Forecast 5 Days">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Weather Forecast — 5 Days</h3>
+          <p>5-day weather forecast web application with API integration.</p>
+        </div>
+        <div class="project-links">
+          <a href="weather.html" class="project-link">Explore</a>
+          <a href="https://github.com/Paul2004-sza/weatherapi/blob/main/sut_zaw_aung_appweather.apk"
+             target="_blank" class="project-link secondary">Download APK</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5: Fraud Analysis -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="fraud_analysis.html">
+          <img src="images2/fraud.png" alt="Fraud Analysis">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Fraud Analysis</h3>
+          <p>Rule-based and machine learning approach to detect fraudulent activities.</p>
+        </div>
+        <div class="project-links">
+          <a href="fraud_analysis.html" class="project-link">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6: Transactions -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="transactions.html">
+          <img src="images2/transactionsanalysis.png" alt="Transactions Analysis">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Transactions Analysis</h3>
+          <p>Bank transaction monitoring and analysis trends.</p>
+        </div>
+        <div class="project-links">
+          <a href="transactions.html" class="project-link">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7: Customer Segmentation -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="customer_segmentation.html">
+          <img src="images2/customer_segmentation.png" alt="Customer Segmentation">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Customer Segmentation</h3>
+          <p>Clustering customers for targeted marketing.</p>
+        </div>
+        <div class="project-links">
+          <a href="customer_segmentation.html" class="project-link">Explore</a>
+        </div>
+      </div>
+    </div>
+        <!-- 8Amazing Mart Dashboard -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="AmazingMartDashboard.html">
+          <img src="images2/sale.png" alt="Amazing Mart Dashboard">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Amazing Mart Dashboard</h3>
+          <p>A dynamic Power BI dashboard that transforms raw sales data into clear insights—revealing top-performing countries, product categories, customer segments, and yearly trends.</p>
+          <p style="margin-top:6px;color:#64748b;">Built for data-driven decision-making, forecasting, and strategic business planning.</p>
+        </div>
+        <div class="project-links">
+          <a href="AmazingMartDashboard.html" class="project-link">Explore</a>
+        </div>
+      </div>
+    </div>
+
+        <!-- 9: Handdetect -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="detecthand.html">
+          <img src="images2/hand.png" alt="Hand Detection">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Hand Detection</h3>
+          <p>If your hand appears, the hand will be detected!</p>
+        </div>
+        <div class="project-links">
+          <a href="detecthand.html" class="project-link">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10: Resume -->
+    <div class="project-card">
+      <div class="project-img">
+        <a href="resume.html">
+          <img src="images2/rem.png" alt="Resume">
+        </a>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Resume</h3>
+          <p>My full resume for recruiters.</p>
+        </div>
+        <div class="project-links">
+          <a href="resume.html" class="project-link">Explore</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- Contact -->
+<section id="contact" style="background:var(--secondary-color);padding:80px 20px;">
+  <div class="container" style="text-align:center">
+    <h2 style="font-size:2.5rem;color:var(--primary-color);margin-bottom:24px;">Contact & Links</h2>
+
+    <!-- Email with icon -->
+    <p style="margin-top:16px;font-size:1.4rem;display:flex;align-items:center;justify-content:center;gap:12px;">
+      <img src="images2/email.png" alt="Email Icon" style="width:30px;height:30px;">
+      <strong>Email:</strong>
+      <a href="mailto:sutzawaungnhkum@gmail.com" style="color:var(--primary-color);text-decoration:underline;font-size:1.4rem;">
+        sutzawaungnhkum@gmail.com
+      </a>
+    </p>
+
+    <!-- Social Links -->
+    <div style="margin-top:32px;display:flex;justify-content:center;flex-wrap:wrap;gap:20px;">
+      <a href="https://linkedin.com/in/sut-zaw-aung-686107354" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:#0a66c2;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;font-size:1.1rem;">
+        <img src="images2/linkedin.png" alt="LinkedIn" style="width:24px;height:24px;"> LinkedIn
+      </a>
+      <a href="https://github.com/Paul2004-sza" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:#333;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;font-size:1.1rem;">
+        <img src="images2/github.png" alt="GitHub" style="width:24px;height:24px;"> GitHub
+      </a>
+      <a href="https://www.facebook.com/nhkum.sut.zau.awng" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:#1877f2;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;font-size:1.1rem;">
+        <img src="images2/facebook.png" alt="Facebook" style="width:24px;height:24px;"> Facebook
+      </a>
+      <a href="https://www.tiktok.com/@rizz200419?lang=en-GB" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:#000;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;font-size:1.1rem;">
+        <img src="images2/tiktok.png" alt="TikTok" style="width:24px;height:24px;"> TikTok
+      </a>
+      <a href="https://www.instagram.com/paul200419/" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:#c32aa3;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;font-size:1.1rem;">
+        <img src="images2/instagram.png" alt="Instagram" style="width:24px;height:24px;"> Instagram
+      </a>
+    </div>
+
+    <!-- Thank you note -->
+    <p style="margin-top:40px;font-size:1.4rem;color:var(--primary-color);font-weight:600;">
+      Thank you very much!
+    </p>
+
+  </div>
+</section>
+
+
+<footer>
+  <p>&copy; 2025 Sut Zaw Aung's Portfolio. All rights reserved.</p>
+</footer>
+
+<script>
+  // Slider script (keeps previous behavior)
+  const slides = document.querySelector('.slides');
+  const totalSlides = slides.children.length;
+  let index = 0;
+  const indicators = document.querySelectorAll('.indicator');
+  const slideTexts = [
+    document.getElementById('slide1-text'),
+    document.getElementById('slide2-text'),
+    document.getElementById('slide3-text')
+  ];
+
+  function showSlide(i) {
+    index = (i + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}vw)`;
+    indicators.forEach((indicator, idx) => indicator.classList.toggle('active', idx === index));
+    slideTexts.forEach((text, idx) => text.classList.toggle('active', idx === index));
+  }
+
+  function nextSlide(){ showSlide(index + 1); }
+  function prevSlide(){ showSlide(index - 1); }
+
+  document.querySelector('.next').addEventListener('click', ()=>{ nextSlide(); resetInterval(); });
+  document.querySelector('.prev').addEventListener('click', ()=>{ prevSlide(); resetInterval(); });
+
+  indicators.forEach(ind => {
+    ind.addEventListener('click', ()=> {
+      const i = parseInt(ind.getAttribute('data-index'));
+      showSlide(i); resetInterval();
+    });
+  });
+
+  let slideInterval = setInterval(nextSlide, 5000);
+  function resetInterval(){ clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 5000); }
+
+  // Contact form
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you for your message! I will get back to you soon.');
+    this.reset();
+  });
+
+  // Image error logging
+  document.querySelectorAll('img').forEach(img=>{
+    img.addEventListener('error', function(){ console.log('Image failed to load:', this.src); });
+  });
+
+  // init
+  showSlide(0);
+</script>
+
+</body>
+</html>

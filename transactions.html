@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transaction Analysis — Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent2: #d97706;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto;
+      margin: 0;
+      background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 22px;
+    }
+
+    h1 { margin:0; font-size:26px; }
+    p.lead { color: var(--muted); margin-top: 6px; }
+
+    .card {
+      background: rgba(0,0,0,0.02);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+
+    img.screenshot {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      background: #f1f5f9;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .badge { background: rgba(0,0,0,0.04); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px; }
+
+    a.btn-home { display:inline-block; padding:10px 16px; background:#0f766e; color:white; border-radius:8px; text-decoration:none; margin-bottom:20px; font-weight:600; }
+
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--accent),#0e9c94);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 6px;
+      margin-top: 4px;
+    }
+
+    section h2 { margin:0 0 8px 0; }
+
+    p.note {
+      background: rgba(0,0,0,0.02);
+      padding: 10px;
+      border-left: 4px solid rgba(15,118,110,0.2);
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    ul.plain { margin: 8px 0 0 18px; color: var(--muted); }
+
+    .small { font-size: 0.95rem; color: var(--muted); margin-top: 8px; }
+
+    .data-links {
+      background: rgba(15,118,110,0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .data-links h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .data-links ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    .data-links li {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+
+    .data-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .data-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align:center; }
+
+    @media(max-width:900px) {
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html#projects" class="btn-home">⬅Projects</a>
+
+<div class="container">
+
+  <header>
+    <div class="logo">TX</div>
+    <div>
+      <h1>Transaction Analysis</h1>
+      <p class="lead">Channel mix, transaction growth, and amount distributions to support operational and product decisions.</p>
+
+      <div class="meta">
+        <span class="badge">Author: Paul (SUT ZAW AUNG)</span>
+        <span class="badge">Project: Bank Transaction Analysis</span>
+        <span class="badge">Date: Nov 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+
+    <section>
+      <h2>Project Overview</h2>
+      <p class="note">
+        This project analyzes banking transaction patterns across channels, locations, and time periods to identify operational insights, customer behavior trends, and opportunities for process optimization. By examining transaction volumes, amounts, and distributions, we provide actionable recommendations for resource allocation, fraud detection strategies, and customer segmentation.
+      </p>
+    </section>
+
+    <!-- Section 1: Transaction Channel Analysis -->
+    <section>
+      <h2>1. Transaction Channel Analysis</h2>
+      <p class="note">
+        This chart compares transaction counts across POS, ATM, Branch, and Online channels. POS and ATM have slightly higher volumes, while Online is catching up quickly—showing rising digital adoption. The distribution is balanced, indicating customers use multiple channels consistently.
+      </p>
+      <img src="./images/transactionchannelanalysis.png" class="screenshot" alt="Transaction Channel Analysis showing distribution across POS, ATM, Branch, and Online channels" />
+      <p class="small">
+        Insight: Apply channel-specific fraud controls—device/IP checks for online, card-present verification for POS, and withdrawal velocity rules for ATM.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/transaction_channel_analysis.csv" target="_blank">transaction_channel_analysis.csv</a> — Transaction counts by channel</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/monthly_transactions_summary.csv" target="_blank">monthly_transactions_summary.csv</a> — Monthly transaction overview</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Distribution of Average Transaction Amounts -->
+    <section>
+      <h2>2. Distribution of Average Transaction Amounts per Account</h2>
+      <p class="note">
+        The distribution appears bell-shaped, showing that most customers transact within normal mid-range amounts. The boxplot highlights a tight middle range but also shows clear high-value and low-value outliers.
+      </p>
+      <img src="./images/distributionofaveragetransactionamountperaccount.png" class="screenshot" alt="Distribution of average transaction amounts showing bell curve pattern with outliers" />
+      <p class="small">
+        Insight: Segment customers into low, medium, and high average spenders to create dynamic limits and improve fraud detection on unusual spending patterns.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/transaction_statistics_per_account.csv" target="_blank">transaction_statistics_per_account.csv</a> — Account-level transaction statistics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/transaction_statistics_per_account_with_customer_id.csv" target="_blank">transaction_statistics_per_account_with_customer_id.csv</a> — Customer-specific transaction stats</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: Monthly Transaction Count Trend -->
+    <section>
+      <h2>3. Monthly Transaction Count (Trend)</h2>
+      <p class="note">
+        From 2016 to 2022, transaction counts grow steadily. Around 2023, a sharp increase begins, accelerating into 2024–2025. This surge suggests major digital expansion or a successful product rollout.
+      </p>
+      <img src="./images/monthlytransactioncount.png" class="screenshot" alt="Monthly transaction count trend showing steady growth with sharp increase from 2023" />
+      <p class="small">
+        Insight: Rapid growth requires scaling infrastructure and real-time monitoring systems to avoid delays and maintain fraud detection accuracy.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/monthly_transactions_summary.csv" target="_blank">monthly_transactions_summary.csv</a> — Monthly transaction totals</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/peak_transaction_months.csv" target="_blank">peak_transaction_months.csv</a> — Peak transaction period analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/highest_revenue_months.csv" target="_blank">highest_revenue_months.csv</a> — Highest revenue months</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: Monthly Transaction Count by Type -->
+    <section>
+      <h2>4. Monthly Transaction Count by Type (Credit vs Debit)</h2>
+      <p class="note">
+        Both debit and credit transactions increase over time, but the rapid rise in 2024–2025 is driven mainly by debit transactions. Debit forms the larger share of total transaction volume.
+      </p>
+      <img src="./images/monthlytransactioncountbytype.png" class="screenshot" alt="Monthly transaction count by type showing debit transactions driving recent growth" />
+      <p class="small">
+        Insight: Prioritize debit-specific controls such as daily limits, velocity checks, and anomaly detection while tuning credit rules separately.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/monthly_transactions_by_type.csv" target="_blank">monthly_transactions_by_type.csv</a> — Transaction breakdown by type</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/customer_usual_patterns.csv" target="_blank">customer_usual_patterns.csv</a> — Customer transaction patterns</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 5: Location Analysis -->
+    <section>
+      <h2>5. Transaction Location Analysis</h2>
+      <p class="note">
+        Geographic analysis reveals transaction hotspots and regional patterns. Understanding location-based transaction behavior helps optimize branch placement, ATM deployment, and regional marketing strategies. Peak transaction locations show where operational resources should be concentrated.
+      </p>
+      <img src="./images/transactionlocationanalysis.png" class="screenshot" alt="Transaction location analysis showing geographic distribution and hotspots" />
+      <p class="small">
+        Insight: Use location data to optimize branch hours, ATM placement, and regional fraud detection parameters based on local transaction patterns.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/top_transaction_locations.csv" target="_blank">top_transaction_locations.csv</a> — Highest volume transaction locations</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/location_transaction_summary.csv" target="_blank">location_transaction_summary.csv</a> — Location-based transaction summary</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/location_peak_transaction_summary.csv" target="_blank">location_peak_transaction_summary.csv</a> — Peak transaction times by location</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/monthly_transactions_by_location.csv" target="_blank">monthly_transactions_by_location.csv</a> — Monthly transactions by location</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 6: Customer Behavior Patterns -->
+    <section>
+      <h2>6. Customer Transaction Behavior Patterns</h2>
+      <p class="note">
+        Analysis of individual customer transaction behaviors reveals distinct spending patterns, frequency preferences, and channel usage habits. Segmenting customers based on these patterns enables personalized service offerings, targeted marketing, and customized risk management approaches.
+      </p>
+      <img src="./images/customerbehaviorpatterns.png" class="screenshot" alt="Customer behavior patterns showing segmentation based on transaction habits" />
+      <p class="small">
+        Insight: Develop customer personas based on transaction behavior to improve product recommendations and detect anomalous activities more effectively.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/customer_usual_patterns.csv" target="_blank">customer_usual_patterns.csv</a> — Customer transaction behavior patterns</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/all_loc_date_peak_least_tran_amount_summary.csv" target="_blank">all_loc_date_peak_least_tran_amount_summary.csv</a> — Comprehensive location-date analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="full">
+      <h2>Overall Summary & Operational Insights</h2>
+      <p class="note">
+        Transaction analysis reveals significant growth opportunities and operational considerations:
+        <br><br>
+
+        <strong>Key Findings:</strong>
+        <ul class="plain">
+          <li>Digital channel adoption is accelerating, with online transactions showing the fastest growth rate</li>
+          <li>Debit transactions drive the majority of recent volume increases, requiring focused risk management</li>
+          <li>Transaction distribution follows a normal pattern with identifiable high-value customer segments</li>
+          <li>Geographic analysis reveals clear transaction hotspots that should inform resource allocation</li>
+          <li>The 2023-2025 surge indicates successful digital transformation initiatives</li>
+        </ul>
+        <br>
+
+        <strong>Business Impact:</strong> Optimized channel strategy, improved fraud detection accuracy, data-driven resource allocation, and enhanced customer segmentation for targeted marketing.
+      </p>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="full">
+      <h2>Strategic Recommendations</h2>
+      <p class="note">
+        To maximize operational efficiency and customer experience:
+        <ul class="plain">
+          <li><strong>Scale digital infrastructure:</strong> Invest in cloud-based systems to handle exponential transaction growth</li>
+          <li><strong>Implement dynamic limits:</strong> Create transaction limits based on customer segments and behavior patterns</li>
+          <li><strong>Optimize channel strategy:</strong> Allocate resources based on channel usage trends and growth projections</li>
+          <li><strong>Enhance location-based services:</strong> Use geographic insights to improve branch and ATM placement</li>
+          <li><strong>Develop personalized offerings:</strong> Leverage customer behavior patterns for targeted products and services</li>
+          <li><strong>Strengthen real-time monitoring:</strong> Implement advanced analytics for immediate fraud detection and operational alerts</li>
+        </ul>
+      </p>
+    </section>
+
+    <!-- All Data Links -->
+    <section class="full">
+      <h2>Complete Dataset Collection</h2>
+      <div class="data-links">
+        <h3>📂 All Project Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/all_loc_date_peak_least_tran_amount_summary.csv" target="_blank">all_loc_date_peak_least_tran_amount_summary.csv</a> — Comprehensive location-date transaction analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/customer_usual_patterns.csv" target="_blank">customer_usual_patterns.csv</a> — Customer transaction behavior patterns</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/highest_revenue_months.csv" target="_blank">highest_revenue_months.csv</a> — Monthly revenue performance</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/location_peak_transaction_summary.csv" target="_blank">location_peak_transaction_summary.csv</a> — Peak transaction analysis by location</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/location_transaction_amount_summary.csv" target="_blank">location_transaction_amount_summary.csv</a> — Transaction amounts by location</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/location_transaction_summary.csv" target="_blank">location_transaction_summary.csv</a> — Location-based transaction overview</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/monthly_transactions_by_location.csv" target="_blank">monthly_transactions_by_location.csv</a> — Monthly transactions by geographic location</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/monthly_transactions_by_type.csv" target="_blank">monthly_transactions_by_type.csv</a> — Monthly breakdown by transaction type</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/monthly_transactions_summary.csv" target="_blank">monthly_transactions_summary.csv</a> — Comprehensive monthly transaction summary</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/peak_transaction_months.csv" target="_blank">peak_transaction_months.csv</a> — Analysis of highest transaction months</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/top_transaction_locations.csv" target="_blank">top_transaction_locations.csv</a> — Highest volume transaction locations</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/tran_sum_locations_by_month.csv" target="_blank">tran_sum_locations_by_month.csv</a> — Monthly location transaction summaries</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/transaction_channel_analysis.csv" target="_blank">transaction_channel_analysis.csv</a> — Channel-specific transaction analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/transaction_statistics_per_account.csv" target="_blank">transaction_statistics_per_account.csv</a> — Account-level transaction statistics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Transaction/transaction_statistics_per_account_with_customer_id.csv" target="_blank">transaction_statistics_per_account_with_customer_id.csv</a> — Customer-specific transaction statistics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Project Links -->
+    <section class="full">
+      <h2>Project Repository</h2>
+      <ul class="plain">
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/processed/Transaction" target="_blank">View Transaction Analysis Folder</a></li>
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science" target="_blank">View Full Bank Data Science Project</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by <strong>Paul (SUT ZAW AUNG)</strong>. Transaction analytics for operational optimization and strategic decision-making.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

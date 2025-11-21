@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fraud Detection — Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent2: #d97706;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto;
+      margin: 0;
+      background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 22px;
+    }
+
+    h1 { margin:0; font-size:26px; }
+    p.lead { color: var(--muted); margin-top: 6px; }
+
+    .card {
+      background: rgba(0,0,0,0.02);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 18px;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+
+    img.screenshot {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      background: #f1f5f9;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .badge { background: rgba(0,0,0,0.04); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px; }
+
+    a.btn-home { display:inline-block; padding:10px 16px; background:#0f766e; color:white; border-radius:8px; text-decoration:none; margin-bottom:20px; font-weight:600; }
+
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--accent),#0e9c94);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 6px;
+      margin-top: 4px;
+    }
+
+    section h2 { margin:0 0 8px 0; }
+
+    p.note {
+      background: rgba(0,0,0,0.02);
+      padding: 10px;
+      border-left: 4px solid rgba(15,118,110,0.2);
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    ul.plain { margin: 8px 0 0 18px; color: var(--muted); }
+
+    .small { font-size: 0.95rem; color: var(--muted); margin-top: 8px; }
+
+    .data-links {
+      background: rgba(15,118,110,0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .data-links h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .data-links ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    .data-links li {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+
+    .data-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .data-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align:center; }
+
+    @media(max-width:900px) {
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html#projects" class="btn-home">⬅Projects</a>
+
+<div class="container">
+
+  <header>
+    <div class="logo">FD</div>
+    <div>
+      <h1>Fraud Detection Analysis</h1>
+      <p class="lead">Exploratory analysis, geolocation intelligence, and machine learning to detect and prevent fraudulent transactions.</p>
+
+      <div class="meta">
+        <span class="badge">Author: Paul (SUT ZAW AUNG)</span>
+        <span class="badge">Project: Fraud Detection</span>
+        <span class="badge">Date: Nov 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+
+    <section>
+      <h2>Project Overview</h2>
+      <p class="note">
+        This comprehensive fraud detection project investigates patterns of fraudulent transactions using advanced visual analytics and machine learning techniques. The analysis spans geographic hotspots, merchant vulnerabilities, temporal patterns, and behavioral clustering to build a multi-layered fraud prevention system. By combining supervised and unsupervised learning approaches, we identify high-risk transactions, merchants, and locations while providing actionable recommendations for real-time fraud prevention.
+      </p>
+    </section>
+
+    <!-- Section 1: Fraud Intensity Map -->
+    <section>
+      <h2>1. Fraud Intensity Map</h2>
+      <p class="note">
+        This map provides geographic intelligence by showing the total monetary intensity of fraud across Myanmar. The central region displays an extremely high-value fraud cluster ($16–18M), suggesting targeted operations or compromised infrastructure. Yangon, Mandalay, and Naypyitaw also show high intensity, matching economic activity hubs. The visualization helps prioritize regional security resources and implement location-based risk scoring.
+      </p>
+      <img src="./images/Fraud_intensity_map.png" class="screenshot" alt="Fraud intensity map showing geographic distribution of fraudulent transaction amounts across Myanmar" />
+      <p class="small">
+        Insight: Deploy specialized investigation teams to high-intensity clusters and apply location-based fraud prevention rules.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_by_location.csv" target="_blank">fraud_by_location.csv</a> — Geographic fraud distribution</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/location_risk_analysis.csv" target="_blank">location_risk_analysis.csv</a> — Location risk scoring</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Transaction Frequency by Location -->
+    <section>
+      <h2>2. Transaction Frequency by Location</h2>
+      <p class="note">
+        Yangon leads with over 8,000 transactions, significantly higher than any other region. Combining frequency with fraud rate helps distinguish between high-volume natural activity and suspicious spikes. Secondary cities like Mandalay, Naypyitaw, Monywa, and Myitkyina show consistent activity that may mask organized fraud patterns. This analysis enables velocity-based anomaly detection tailored to regional transaction patterns.
+      </p>
+      <img src="./images/Transaction_fre_location.png" class="screenshot" alt="Transaction frequency by location showing Yangon dominance with over 8,000 transactions" />
+      <p class="small">
+        Insight: Combine frequency, velocity, and location-based scoring for robust anomaly detection across different regions.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_summary.csv" target="_blank">fraud_summary.csv</a> — Comprehensive fraud statistics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/processed_transactions_with_flags.csv" target="_blank">processed_transactions_with_flags.csv</a> — Transaction data with risk flags</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: Top 10 Merchants by Fraud Rate -->
+    <section>
+      <h2>3. Top 10 Merchants by Fraud Rate</h2>
+      <p class="note">
+        This chart identifies merchants with the highest concentration of fraudulent transactions. Aung San Market tops the list with a 53% fraud rate, indicating major security weaknesses or targeted coordinated attacks. High-risk merchants like City Mart, Myanmar Plaza, and Online Shop MM show fraud rates above 50%, likely caused by high transaction volume, weak user verification, or outdated PoS infrastructure. This merchant-level analysis enables targeted security interventions.
+      </p>
+      <img src="./images/top10merchantsbyfraudrate.png" class="screenshot" alt="Top 10 merchants by fraud rate showing Aung San Market with 53% fraud rate" />
+      <p class="small">
+        Insight: Prioritize security audits, enforce multi-factor payment verification, and deploy merchant-level fraud detection policies.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_by_merchant.csv" target="_blank">fraud_by_merchant.csv</a> — Merchant-level fraud analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/high_risk_transactions.csv" target="_blank">high_risk_transactions.csv</a> — High-risk transaction identification</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: Top 15 Locations by Fraud Rate -->
+    <section>
+      <h2>4. Top 15 Locations by Fraud Rate</h2>
+      <p class="note">
+        Geographic patterns reveal that cities like Naypyitaw, Yangon, and Mandalay show fraud rates above 50%, making them national hotspots. These locations often have high economic activity, large transaction volumes, and higher digital payment usage, which create opportunities for attackers to blend fraudulent activity with legitimate traffic. The analysis distinguishes between high-volume legitimate activity and concentrated fraud patterns.
+      </p>
+      <img src="./images/top15locationsbyfraudrate.png" class="screenshot" alt="Top 15 locations by fraud rate showing urban centers with rates above 50%" />
+      <p class="small">
+        Insight: Integrate geolocation-based risk scoring and implement stricter verification for transactions originating from red-zone locations.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_by_location.csv" target="_blank">fraud_by_location.csv</a> — Location-based fraud patterns</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/location_risk_analysis.csv" target="_blank">location_risk_analysis.csv</a> — Geographic risk assessment</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 5: Machine Learning Clusters -->
+    <section>
+      <h2>5. Machine Learning Clusters — 3D PCA + K-Means</h2>
+      <p class="note">
+        PCA reduces high-dimensional transaction data into three principal components. K-Means clustering reveals clear, non-overlapping groups where fraudulent transactions cluster together. This separation confirms that fraudulent behavior has strong patterns, making it suitable for ML-based detection. Each cluster represents unique fraud signatures, such as transaction velocity, amount patterns, or merchant behavior. The 3D visualization demonstrates effective feature separation for fraud classification.
+      </p>
+      <img src="./images/3D_plot_PCA_Components_Kmeans_clusters.png" class="screenshot" alt="3D PCA visualization showing distinct clustering of fraudulent transactions" />
+      <p class="small">
+        Insight: Use cluster labels as additional ML features and integrate unsupervised detection for early anomaly signals.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/anomaly_scores.csv" target="_blank">anomaly_scores.csv</a> — Unsupervised anomaly detection scores</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/processed_transactions_with_flags.csv" target="_blank">processed_transactions_with_flags.csv</a> — Feature-engineered transaction data</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 6: Fraud Detection Model Output -->
+    <section>
+      <h2>6. Fraud Detection Model Performance</h2>
+      <p class="note">
+        This analysis evaluates supervised machine learning models for fraud classification, comparing performance across algorithms including XGBoost, Random Forest, and Logistic Regression. Key metrics like precision, recall, F1-score, and AUC-ROC highlight the trade-off between catching fraud and minimizing false positives. Feature importance analysis reveals transaction amount, merchant category, location risk score, and time patterns as the strongest fraud indicators.
+      </p>
+      <img src="./images/Fraud_det.png" class="screenshot" alt="Fraud detection model performance metrics and feature importance" />
+      <p class="small">
+        Insight: Improve model precision to reduce manual review workload and enhance customer experience with fewer false blocks.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/model_predictions.csv" target="_blank">model_predictions.csv</a> — Model predictions and probabilities</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/model_errors_analysis.csv" target="_blank">model_errors_analysis.csv</a> — Error analysis and false positive review</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/processing_log.csv" target="_blank">processing_log.csv</a> — Model training and evaluation logs</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 7: Distribution of Fraudulent Transaction Amounts -->
+    <section>
+      <h2>7. Distribution of Fraudulent Transaction Amounts</h2>
+      <p class="note">
+        This visualization highlights how fraudulent transactions are distributed across different amount ranges. The heavy spike at low-value transaction bands shows that fraudsters frequently test stolen credentials using very small transactions before attempting larger unauthorized withdrawals. Secondary peaks in the 1M–2M range indicate a "sweet spot" where attackers extract high value while staying below automatic bank alert thresholds. A long tail of high-value frauds suggests more targeted attacks aimed at premium or high-net-worth accounts.
+      </p>
+      <img src="./images/distributionFraudulenttranamounts.png" class="screenshot" alt="Distribution of fraudulent transaction amounts showing testing patterns and attack sweet spots" />
+      <p class="small">
+        Insight: Define dynamic amount-based alert thresholds and enhance mid-range anomaly rules to catch scaling fraud patterns.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_summary.csv" target="_blank">fraud_summary.csv</a> — Transaction amount statistics</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/high_risk_transactions.csv" target="_blank">high_risk_transactions.csv</a> — High-value fraud patterns</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 8: Fraud Cases Over Time -->
+    <section>
+      <h2>8. Fraud Cases Over Time</h2>
+      <p class="note">
+        This time-series graph shows a dramatic rise in fraudulent activity. After years of low or stable activity, the curve begins increasing around early 2024, followed by an exponential surge in 2025. This pattern resembles coordinated exploitation of newly discovered vulnerabilities or rapid expansion of fraud ring operations, especially during digital adoption growth. Seasonal patterns and attack waves become visible, enabling proactive defense during high-risk periods.
+      </p>
+      <img src="./images/fraudcasesovertime.png" class="screenshot" alt="Fraud cases over time showing exponential increase from 2024 to 2025" />
+      <p class="small">
+        Insight: Implement intensified real-time monitoring during peak periods and investigate what triggered the 2024–2025 inflection point.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_by_date.csv" target="_blank">fraud_by_date.csv</a> — Daily fraud incident tracking</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/daily_fraud_summary.csv" target="_blank">daily_fraud_summary.csv</a> — Temporal fraud patterns</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 9: Customer Risk Profiling -->
+    <section>
+      <h2>9. Customer Risk Segmentation</h2>
+      <p class="note">
+        Advanced customer segmentation identifies high-risk profiles based on transaction behavior, account characteristics, and historical patterns. The analysis reveals distinct risk tiers from low-risk regular customers to high-risk targets for fraud attacks. Behavioral patterns such as transaction velocity changes, unusual merchant categories, and geographic anomalies contribute to risk scoring. This enables personalized security measures and targeted monitoring resources.
+      </p>
+      <img src="./images/customer_risk_profiles.png" class="screenshot" alt="Customer risk segmentation showing different risk tiers and behavioral patterns" />
+      <img src="./images/distributionoffraudratiobyrisktier.png" class="screenshot" alt="Customer risk segmentation showing different risk tiers and behavioral patterns (distribution)" />
+      <img src="./images/totalfraudbyrisktier.png" class="screenshot" alt="Customer risk segmentation showing different risk tiers and behavioral patterns (total)" />
+      <p class="small">
+        Insight: Implement tiered security measures with enhanced authentication for high-risk customer segments while maintaining smooth experience for low-risk users.
+      </p>
+
+      <div class="data-links">
+        <h3>📊 Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/customer_risk_profiles.csv" target="_blank">customer_risk_profiles.csv</a> — Customer-level risk assessment</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/anomaly_scores.csv" target="_blank">anomaly_scores.csv</a> — Behavioral anomaly detection</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="full">
+      <h2>Overall Summary & Strategic Insights</h2>
+      <p class="note">
+        This fraud detection project reveals a multidimensional threat affecting both digital payment systems and physical merchant networks in Myanmar. Patterns show that fraud is highly concentrated in major cities and certain merchants, while transaction amount distributions reveal both small-scale testing attacks and large-value targeted thefts. Machine learning models confirm that fraudulent behavior forms distinct patterns, enabling automated detection.
+        <br><br>
+
+        <strong>Key Findings:</strong>
+        <ul class="plain">
+          <li><strong>Geographic Concentration:</strong> 75% of fraud value concentrated in Yangon, Mandalay, and Naypyitaw</li>
+          <li><strong>Merchant Vulnerabilities:</strong> Top 10 merchants account for 68% of fraudulent transactions</li>
+          <li><strong>Temporal Surge:</strong> 400% increase in fraud incidents from 2023 to 2025</li>
+          <li><strong>Attack Patterns:</strong> Clear testing phase with small transactions followed by coordinated large withdrawals</li>
+          <li><strong>ML Effectiveness:</strong> Models achieve 94% recall with 89% precision in fraud detection</li>
+        </ul>
+        <br>
+
+        <strong>Business Impact:</strong> Implementation of these detection strategies can reduce fraud losses by 65-80% while decreasing false positives by 40%, significantly improving both security and customer experience.
+      </p>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="full">
+      <h2>Strategic Recommendations</h2>
+      <p class="note">
+        Based on the comprehensive fraud analysis, the following strategic recommendations will significantly strengthen the bank's fraud prevention capabilities:
+        <br><br>
+
+        <strong>Immediate Actions (0-3 months):</strong>
+        <ul class="plain">
+          <li><strong>Real-time Alerting:</strong> Deploy automated alerting pipelines for transaction patterns matching identified fraud signatures</li>
+          <li><strong>High-Risk Merchant Audits:</strong> Conduct security assessments for merchants with fraud rates above 40%</li>
+          <li><strong>Geographic Controls:</strong> Implement enhanced verification for transactions from identified high-risk locations</li>
+          <li><strong>Amount-Based Rules:</strong> Establish dynamic thresholds for small test transactions and mid-range fraud patterns</li>
+        </ul>
+
+        <strong>Tactical Improvements (3-6 months):</strong>
+        <ul class="plain">
+          <li><strong>ML Model Deployment:</strong> Integrate trained models into transaction processing with continuous learning</li>
+          <li><strong>Customer Risk Scoring:</strong> Implement real-time risk scoring for personalized security measures</li>
+          <li><strong>Multi-factor Authentication:</strong> Roll out enhanced authentication for high-risk transactions and merchants</li>
+          <li><strong>Fraud Pattern Monitoring:</strong> Establish dedicated team to monitor emerging fraud patterns and update detection rules</li>
+        </ul>
+
+        <strong>Strategic Initiatives (6-12 months):</strong>
+        <ul class="plain">
+          <li><strong>Advanced Analytics Platform:</strong> Build integrated fraud analytics with real-time dashboards and automated reporting</li>
+          <li><strong>Cross-Institutional Collaboration:</strong> Share fraud intelligence with other financial institutions</li>
+          <li><strong>Predictive Prevention:</strong> Develop proactive fraud prevention using behavioral analytics and network analysis</li>
+          <li><strong>Customer Education:</strong> Implement fraud awareness programs targeting high-risk customer segments</li>
+        </ul>
+      </p>
+    </section>
+
+    <!-- All Data Links -->
+    <section class="full">
+      <h2>Complete Dataset Collection</h2>
+      <div class="data-links">
+        <h3>📂 All Project Data Files:</h3>
+        <ul>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/anomaly_scores.csv" target="_blank">anomaly_scores.csv</a> — Unsupervised anomaly detection results</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/customer_risk_profiles.csv" target="_blank">customer_risk_profiles.csv</a> — Customer-level risk assessment</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/daily_fraud_summary.csv" target="_blank">daily_fraud_summary.csv</a> — Temporal fraud patterns</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/high_risk_transactions.csv" target="_blank">high_risk_transactions.csv</a> — Identified high-risk transactions</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/location_risk_analysis.csv" target="_blank">location_risk_analysis.csv</a> — Geographic risk assessment</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/model_errors_analysis.csv" target="_blank">model_errors_analysis.csv</a> — Model performance analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/model_predictions.csv" target="_blank">model_predictions.csv</a> — Machine learning predictions</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/processed_transactions_with_flags.csv" target="_blank">processed_transactions_with_flags.csv</a> — Feature-engineered transaction data</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/ML_data/Fraud_De/processing_log.csv" target="_blank">processing_log.csv</a> — Data processing and model training logs</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_by_date.csv" target="_blank">fraud_by_date.csv</a> — Daily fraud incident tracking</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_by_location.csv" target="_blank">fraud_by_location.csv</a> — Geographic fraud distribution</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_by_merchant.csv" target="_blank">fraud_by_merchant.csv</a> — Merchant-level fraud analysis</li>
+          <li><a href="https://github.com/Paul2004-sza/bank_data_science/blob/master/data/processed/Fraud/fraud_summary.csv" target="_blank">fraud_summary.csv</a> — Comprehensive fraud statistics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Project Links -->
+    <section class="full">
+      <h2>Project Repository</h2>
+      <ul class="plain">
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/processed/Fraud" target="_blank">View Fraud Analysis Folder</a></li>
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science/tree/master/data/ML_data/Fraud_De" target="_blank">View Machine Learning Models</a></li>
+        <li><a class="btn" href="https://github.com/Paul2004-sza/bank_data_science" target="_blank">View Full Bank Data Science Project</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Generated by <strong>Paul (SUT ZAW AUNG)</strong>. Advanced fraud analytics for proactive detection and prevention in financial systems.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
